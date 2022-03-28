@@ -21,4 +21,8 @@ public class PostService {
     public void likePost(){
 
     }
+
+    public void unlikePost(){
+
+    }
 }
