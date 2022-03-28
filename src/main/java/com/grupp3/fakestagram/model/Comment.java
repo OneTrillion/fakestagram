@@ -1,9 +1,21 @@
 package com.grupp3.fakestagram.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.util.UUID;
 
-
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table
 public class Comment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String comment;
     private UUID userId;
@@ -11,31 +23,11 @@ public class Comment {
     private int likes;
 
 
-    public Comment(Long id,String comment, UUID userId, UUID postId, int likes) {
-        this.id = id;
+    public Comment(String comment, UUID userId, UUID postId, int likes) {
         this.comment = comment;
         this.userId = userId;
         this.postId = postId;
         this.likes = likes;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public UUID getUserId() {
-        return userId;
-    }
-
-    public UUID getPostId() {
-        return postId;
-    }
-
-    public int getLikes() {
-        return likes;
-    }
 }

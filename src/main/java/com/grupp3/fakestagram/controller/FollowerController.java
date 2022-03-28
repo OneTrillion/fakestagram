@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FollowerController {
     @GetMapping("/followertest")
     public Follower viewFollowers(){
-        Follower testFollower = new Follower(265362L,242352L,23652352L);
+        Follower testFollower = new Follower(242352L,23652352L);
         return testFollower;
     }
 }

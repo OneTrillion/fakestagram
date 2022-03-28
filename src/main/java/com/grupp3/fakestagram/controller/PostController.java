@@ -11,7 +11,7 @@ public class PostController {
 
     @GetMapping("/testpost")
     public Post viewPost(){
-        Post testPost = new Post(372356L,"Här är första inlägget",23,"2022-03-28");
+        Post testPost = new Post("Här är första inlägget",23,"2022-03-28");
         return testPost;
     }
 

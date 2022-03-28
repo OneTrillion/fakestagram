@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FollowingController {
     @GetMapping("/followingtest")
     public Following viewFollowing(){
-        Following testFollowing = new Following(2525L,2523525L,35252L);
+        Following testFollowing = new Following(2523525L,35252L);
         return testFollowing;
     }
 }

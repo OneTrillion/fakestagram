@@ -14,7 +14,7 @@ public class CommentController {
 
     @GetMapping("/testcomment")
     public Comment viewComment(){
-        Comment testComment = new Comment(5445L,"Fan vilken snygg bild",UUID.randomUUID(),UUID.randomUUID(),45);
+        Comment testComment = new Comment("Fan vilken snygg bild",UUID.randomUUID(),UUID.randomUUID(),45);
         return testComment;
     }
 

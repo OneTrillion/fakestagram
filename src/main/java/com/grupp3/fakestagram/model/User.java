@@ -1,8 +1,21 @@
 package com.grupp3.fakestagram.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String  name;
+    private String name;
     private int age;
     private int followers;
     private int following;
@@ -11,8 +24,7 @@ public class User {
     private String username;
     private String password;
 
-    public User(Long id,String name, int age, int followers, int following, int posts, String bio, String username, String password) {
-        this.id = id;
+    public User(String name, int age, int followers, int following, int posts, String bio, String username, String password) {
         this.name = name;
         this.age = age;
         this.followers = followers;
@@ -21,41 +33,5 @@ public class User {
         this.bio = bio;
         this.username = username;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public int getFollowers() {
-        return followers;
-    }
-
-    public int getFollowing() {
-        return following;
-    }
-
-    public int getPosts() {
-        return posts;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
     }
 }
