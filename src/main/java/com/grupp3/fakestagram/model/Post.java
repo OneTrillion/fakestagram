@@ -24,4 +24,5 @@ public class Post {
         this.likes = likes;
         this.date = date;
     }
+
 }
