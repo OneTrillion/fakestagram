@@ -1,4 +1,4 @@
-package com.grupp3.fakestagram.controller;
+package com.grupp3.fakestagram.api;
 
 import com.grupp3.fakestagram.model.Comment;
 import org.springframework.web.bind.annotation.GetMapping;
