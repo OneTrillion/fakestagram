@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/following")
-public class FollowingController {
+public class FollowingsController {
     @GetMapping("/followingtest")
     public Following viewFollowing(){
         Following testFollowing = new Following(2523525L,35252L);

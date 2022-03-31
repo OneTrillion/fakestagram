@@ -1,5 +1,6 @@
 package com.grupp3.fakestagram.service;
 
+import com.grupp3.fakestagram.dao.UserDAO;
 import com.grupp3.fakestagram.model.User;
 import com.grupp3.fakestagram.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -8,17 +9,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
+import java.util.List;
+
+@AllArgsConstructor
 @Getter
 @Setter
 @Service
 public class UserService {
-    private UserRepository userRepository;
+    private UserDAO userDAO;
+    UserRepository userRepository;
 
-    public void registerNewUser(){
-        System.out.println("wooo");
-        User Kevin = new User("Kevin", 31, 149, 150, 14, "Live, love, laugh", "kevincoolpisol", "kanelbullar74");
-        //userRepository.save(Kevin);
+    public void registerNewUser(User user){
+        userDAO.registerNewUser(user);
     }
 
     public void changePassword(){
@@ -33,4 +35,7 @@ public class UserService {
 
     }
 
+    public List<User> getAllUsers() {
+        return userDAO.getAllUsers();
+    }
 }

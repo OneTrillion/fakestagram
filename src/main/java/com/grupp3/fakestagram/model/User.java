@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @Getter
@@ -15,13 +17,29 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotEmpty(message = "name is mandatory")
     private String name;
-    private int age;
-    private int followers;
-    private int following;
-    private int posts;
+
+    @NotNull(message = "age is mandatory")
+    private Integer age;
+
+    @NotNull(message = "followers is mandatory")
+    private Integer followers;
+
+    @NotNull(message = "following is mandatory")
+    private Integer following;
+
+    @NotNull(message = "posts is mandatory")
+    private Integer posts;
+
+    @NotEmpty(message = "bio is mandatory")
     private String bio;
+
+    @NotEmpty(message = "username is mandatory")
     private String username;
+
+    @NotEmpty(message = "password is mandatory")
     private String password;
 
     public User(String name, int age, int followers, int following, int posts, String bio, String username, String password) {

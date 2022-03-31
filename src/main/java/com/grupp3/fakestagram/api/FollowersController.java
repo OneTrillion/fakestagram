@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/follower")
-public class FollowerController {
+public class FollowersController {
     @GetMapping("/followertest")
     public Follower viewFollowers(){
         Follower testFollower = new Follower(242352L,23652352L);

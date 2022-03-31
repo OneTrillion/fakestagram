@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-
 @RequestMapping("/api/v1/comment")
-public class CommentController {
+public class CommentsController {
 
     @GetMapping("/testcomment")
     public Comment viewComment(){

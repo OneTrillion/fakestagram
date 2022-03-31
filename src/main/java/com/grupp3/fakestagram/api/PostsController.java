@@ -5,12 +5,11 @@ import com.grupp3.fakestagram.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
 @RequestMapping("/api/v1/post")
-public class PostController {
+public class PostsController {
     PostService postService;
 
-    public PostController(PostService postService) {
+    public PostsController(PostService postService) {
         this.postService = postService;
     }
 
