@@ -24,4 +24,17 @@ public class UserDAO {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public void changeUserPassword(User user, String newPassword){
+        userRepository.setNewPasswordByUserId(newPassword, user.getId());
+    }
+
+    public void changeProfilePicture(User user, String newProfilePicturePath){
+        userRepository.setNewProfilePicturePathByUserId(newProfilePicturePath, user.getId());
+    }
+
+    public void changeBio(User user, String newBio){
+        userRepository.setNewBioByUserId(newBio, user.getId());
+    }
+
 }

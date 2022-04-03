@@ -23,16 +23,16 @@ public class UserService {
         userDAO.registerNewUser(user);
     }
 
-    public void changePassword(){
-
+    public void changePassword(User user, String newPassword){
+        userDAO.changeUserPassword(user, newPassword);
     }
 
-    public void changeProfilePicture(){
-
+    public void changeProfilePicture(User user, String newProfilePicturePath){
+        userDAO.changeProfilePicture(user, newProfilePicturePath);
     }
 
-    public void editProfileDescription(){
-
+    public void changeBio(User user, String newBio){
+        userDAO.changeBio(user, newBio);
     }
 
     public List<User> getAllUsers() {

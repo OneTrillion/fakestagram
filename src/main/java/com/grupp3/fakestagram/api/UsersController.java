@@ -7,6 +7,7 @@ import lombok.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +24,7 @@ public class UsersController {
 
     @GetMapping("/usertest")
     public User viewUser(){
-        User testUser = new User("Love",22,7356,2,13,"Live life.","LoveIsLife","password123");
+        User testUser = new User("Love",22,7356,2,13,"Live life.", "asdasd","LoveIsLife","password123");
         return testUser;
     }
 
@@ -35,6 +36,24 @@ public class UsersController {
     @PostMapping("/register-user")
     public void registerNewUser(@Valid @RequestBody User user){
         userService.registerNewUser(user);
+    }
+
+    @PutMapping("/change-password")
+    public void changeUserPassword(@Valid @RequestBody User user,
+                                   @NotBlank @RequestBody String newPassword){
+        userService.changePassword(user, newPassword);
+    }
+
+    @PutMapping("/change-profile-picture")
+    public void changeProfilePicturePath(@Valid @RequestBody User user,
+                                         @NotBlank @RequestBody String newProfilePicturePath){
+        userService.changeProfilePicture(user, newProfilePicturePath);
+    }
+
+    @PutMapping("/change-bio")
+    public void changeBio(@Valid @RequestBody User user,
+                          @NotBlank @RequestBody String newBio){
+        userService.changeBio(user, newBio);
     }
 
 
