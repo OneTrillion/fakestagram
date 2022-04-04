@@ -29,7 +29,19 @@ public class PostDAO {
         return postRepository.findById(id);
     }
 
-    public Optional<Post> deletePostById(){
-      return null;
+    public void deletePostById(Long id){
+    postRepository.deleteById(id);
+    }
+
+    public void updatePostById() {
+
+    }
+
+    public void likePost(){
+
+    }
+
+    public void unlikePost(){
+
     }
 }

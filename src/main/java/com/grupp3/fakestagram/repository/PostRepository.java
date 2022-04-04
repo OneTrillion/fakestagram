@@ -16,6 +16,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Override
     Optional<Post> findById(Long id);
 
+    @Override
+    void deleteById(Long aLong);
 
 
 

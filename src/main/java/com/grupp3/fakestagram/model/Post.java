@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @Getter
@@ -14,9 +16,12 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
+    @NotEmpty (message = "Description is mandatory")
     private String description;
-    private int likes;
+    private Integer likes;
+    @NotEmpty(message = "Please type in date to continue")
     private String date;
 
     public Post(String description, int likes, String date) {
