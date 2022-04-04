@@ -73,7 +73,7 @@
                         <version>1.9.1</version>
                         <configuration>
                             <nodeVersion>v4.6.0</nodeVersion>
-                            <workingDirectory>src/frontend21</workingDirectory>
+                            <workingDirectory>src/frontend</workingDirectory>
                         </configuration>
                         <executions>
                             <execution>
