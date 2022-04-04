@@ -19,6 +19,16 @@ public class PostsController {
 
     }
 
+    @GetMapping("/view-posts")
+    public void showAllPosts(){
+        postService.viewAllPosts();
+    }
+
+    @GetMapping("/post-{id}")
+    public void showPostById(){
+        postService.findPostById(viewPosts().getId());
+    }
+
     @GetMapping("/testpost")
     public Post viewPosts(){
         Post testPost = new Post("Här är första inlägget",23,"2022-03-28");
