@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {getAllUsers} from "./client";
+import {useEffect, useState} from "react";
 
 function App() {
+
+
+    //Test för hur man kan använda vår api VVV
+    const [users, setUsers] = useState([{}]);
+    const fetchAllUsers = () => {
+    getAllUsers()
+      .then(res => res.json())
+      .then(data => {
+          console.log(data)
+          setUsers(data);
+      }).catch(err => {
+          console.log(err);
+    })
+    }
+
+    useEffect(() => {
+        fetchAllUsers();
+    }, [])
+    
+    const mapAllUsers = users.map(user =>
+            <div key={user.id + user.name}>{user.name}</div>
+        )
+    //Test för hur vi kan använda vår api ^^^
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Hello</h1>
+        {mapAllUsers}
     </div>
   );
 }
