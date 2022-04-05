@@ -4,14 +4,13 @@ import com.grupp3.fakestagram.model.User;
 import com.grupp3.fakestagram.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -24,7 +23,8 @@ public class UsersController {
 
     @GetMapping("/usertest")
     public User viewUser(){
-        User testUser = new User("Love",22,7356,2,13,"Live life.", "asdasd","LoveIsLife","password123");
+        Set<GrantedAuthority> grantedAuth = new HashSet<>();
+        User testUser = new User("Love",22,7356,2,13,"Live life.", "asdasd","LoveIsLife","password123", grantedAuth, true, true, true, true);
         return testUser;
     }
 

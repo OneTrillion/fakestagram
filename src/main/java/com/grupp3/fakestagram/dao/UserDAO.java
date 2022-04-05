@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Getter
@@ -16,6 +17,10 @@ import java.util.List;
 @Repository
 public class UserDAO {
     private UserRepository userRepository;
+
+    public Optional<User> selectUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 
     public void registerNewUser(User user) {
         userRepository.save(user);
