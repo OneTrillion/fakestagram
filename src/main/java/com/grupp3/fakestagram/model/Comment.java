@@ -18,16 +18,14 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String comment;
-    private UUID userId;
-    private UUID postId;
+    private Long userId;
+    private Long postId;
     private int likes;
 
-
-    public Comment(String comment, UUID userId, UUID postId, int likes) {
+    public Comment(String comment, Long userId, Long postId, int likes) {
         this.comment = comment;
         this.userId = userId;
         this.postId = postId;
         this.likes = likes;
     }
-
 }

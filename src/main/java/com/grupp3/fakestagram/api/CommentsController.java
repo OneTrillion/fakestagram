@@ -13,7 +13,7 @@ public class CommentsController {
 
     @GetMapping("/testcomment")
     public Comment viewComment(){
-        Comment testComment = new Comment("Fan vilken snygg bild",UUID.randomUUID(),UUID.randomUUID(),45);
+        Comment testComment = new Comment("Fan vilken snygg bild",123L, 123L,45);
         return testComment;
     }
 
