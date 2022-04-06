@@ -24,7 +24,7 @@ public class PostService {
 
     }
 
-    public Post findPostById(Long id){   //Klar
+    public Post findPostById(Long id){   //Klar//
         // optional hjälper oss undvika null värden (inbyggd if-stats bland annat) kanske lägga in senare
         return postDAO.findPostById(id).orElse(null);
 

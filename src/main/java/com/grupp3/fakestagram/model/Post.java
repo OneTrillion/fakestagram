@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
+//
     private Long id;
     @NotEmpty (message = "Description is mandatory")
     private String description;

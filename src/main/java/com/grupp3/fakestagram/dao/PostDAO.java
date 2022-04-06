@@ -37,7 +37,7 @@ public class PostDAO {
     public void deletePostById(Long id){
     postRepository.deleteById(id);
     }
-
+//
 
     public void likePost(){
 

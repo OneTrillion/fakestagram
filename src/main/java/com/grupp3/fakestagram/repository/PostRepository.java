@@ -13,8 +13,8 @@ import java.util.Optional;
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
 
-    //@Override
-    //<Post> findById(Long id);
+    @Override
+    Optional<Post> findById(Long id);
 
     @Override
     void deleteById(Long aLong);
