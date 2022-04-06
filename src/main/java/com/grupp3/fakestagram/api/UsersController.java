@@ -1,10 +1,12 @@
 package com.grupp3.fakestagram.api;
 
 import com.grupp3.fakestagram.model.User;
+import com.grupp3.fakestagram.model.UserInfo;
 import com.grupp3.fakestagram.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,7 +21,6 @@ import java.util.stream.Collectors;
 public class UsersController {
 
     private UserService userService;
-
 
     @GetMapping("/usertest")
     public User viewUser(){
@@ -56,5 +57,8 @@ public class UsersController {
         userService.changeBio(user, newBio);
     }
 
-
+    @GetMapping("/user-info/{username}")
+    public UserInfo getRelevantUserInfoByUsername(@PathVariable String username) {
+        return userService.getRelevantUserInfoByUsername(username);
+    }
 }

@@ -66,7 +66,6 @@ public class User implements UserDetails {
     @NotNull
     private boolean isEnabled;
 
-
     public User(String name,
                 Integer age,
                 Integer followers,
@@ -96,8 +95,6 @@ public class User implements UserDetails {
         this.isCredentialsNonExpired = isCredentialsNonExpired;
         this.isEnabled = isEnabled;
     }
-
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
