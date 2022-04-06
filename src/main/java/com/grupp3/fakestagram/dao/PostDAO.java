@@ -15,8 +15,9 @@ public class PostDAO {
         this.postRepository = postRepository;
     }
 
-    public void savePost(Post post){
-        postRepository.save(post);
+    public Post savePost(Post post){
+        return postRepository.save(post);
+
 
     }
 
@@ -29,13 +30,14 @@ public class PostDAO {
         return postRepository.findById(id);
     }
 
+    public List<Post> findPostByUser(Long id){
+       return postRepository.findByUserId(id);
+    }
+
     public void deletePostById(Long id){
     postRepository.deleteById(id);
     }
 
-    public void updatePostById() {
-
-    }
 
     public void likePost(){
 

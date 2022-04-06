@@ -14,8 +14,8 @@ public class PostService {
         this.postDAO = postDAO;
     }
 
-    public void makePost(Post post){ //klar
-        postDAO.savePost(post);
+    public Post makePost(Post post){ //klar
+        return postDAO.savePost(post);
     }
 
 
@@ -26,15 +26,20 @@ public class PostService {
 
     public Post findPostById(Long id){   //Klar
         // optional hjälper oss undvika null värden (inbyggd if-stats bland annat) kanske lägga in senare
-        return postDAO.findPostById(id).get();
+        return postDAO.findPostById(id).orElse(null);
 
+    }
+
+    public List<Post> findPostByUser(Long id){//klar
+        return postDAO.findPostByUser(id);
     }
 
     public void deletePostById(Long id){ //Klar
         postDAO.deletePostById(id);
     }
 
-    public void likePost(){
+    public List<Post> likePost(Post post){
+     return null;
 
     }
 
@@ -42,8 +47,5 @@ public class PostService {
 
     }
 
-    public void updatePostById(Post post){
-
-    }
 
 }

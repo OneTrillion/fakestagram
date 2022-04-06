@@ -20,14 +20,22 @@ public class Post {
     private Long id;
     @NotEmpty (message = "Description is mandatory")
     private String description;
+    @NotNull (message = "0")
     private Integer likes;
     @NotEmpty(message = "Please type in date to continue")
     private String date;
+    private String img;
+    private Long userId;
 
-    public Post(String description, int likes, String date) {
+    public Post(String description, int likes, String date, Long userId, String img) {
         this.description = description;
         this.likes = likes;
         this.date = date;
+        this.userId = userId;
+        this.img = img;
     }
+
+
+
 
 }
