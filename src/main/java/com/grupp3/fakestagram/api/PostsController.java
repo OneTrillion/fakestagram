@@ -36,7 +36,7 @@ public class PostsController {
     }
 
     @GetMapping("/user-posts/{id}") //funkar
-    public List<Post> findPostByUser(@PathVariable Long id){
+    public List<Post> findPostByUserId(@PathVariable Long id){
         return postService.findPostByUser(id);
     }
 

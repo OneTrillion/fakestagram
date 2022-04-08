@@ -22,10 +22,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     List<Post> findByUserId(Long userId);
 
-  /*  @Modifying
-    @Query("UPDATE Post post SET post.description = ?1 WHERE post.id = ?2")
-    void setNewPostBio(String newPostDesc, Long id);*/
-
     @Transactional
     @Modifying
     @Query("update Post p set p.description = ?1 where p.id = ?2")
