@@ -45,14 +45,9 @@ public class PostsController {
        postService.deletePostById(id);
     }
 
-    @PutMapping("update/{id}") //fixa; ( får en 403??)
-    public ResponseEntity updatePostById(@PathVariable Long id, @RequestBody Post post){
-       Post currentPost = postService.findPostById(id);
-        currentPost.setDescription(post.getDescription());
-        currentPost.setDate(post.getDate());
-        currentPost = postService.makePost(post);
-
-        return ResponseEntity.ok(currentPost);
+    @PutMapping(value = "update/{id}", produces = "application/json") //fixa; ( får en 403??)
+    public void updatePostDescById(@RequestBody String newPostDesc,@PathVariable Long id){
+      postService.updatePostById(newPostDesc, id);
 
     }
 

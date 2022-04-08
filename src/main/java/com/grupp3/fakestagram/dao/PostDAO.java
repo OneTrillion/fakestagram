@@ -46,4 +46,8 @@ public class PostDAO {
     public void unlikePost(){
 
     }
+
+    public void updatePostById(String newPostDesc, Long id) {
+        postRepository.updateDescriptionById(newPostDesc, id);
+    }
 }

@@ -22,6 +22,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/**").permitAll() //TODO ta bort när vi är klara (gör så att man inte behöver logga in)
                 .anyRequest().authenticated()
