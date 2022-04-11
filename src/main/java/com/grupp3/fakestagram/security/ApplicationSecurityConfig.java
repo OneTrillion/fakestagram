@@ -24,7 +24,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/**").permitAll() //TODO ta bort när vi är klara (gör så att man inte behöver logga in)
+                //.antMatchers("/**").permitAll() //TODO ta bort när vi är klara (gör så att man inte behöver logga in)
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

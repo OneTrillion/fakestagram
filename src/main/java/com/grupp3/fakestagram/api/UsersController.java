@@ -5,6 +5,7 @@ import com.grupp3.fakestagram.model.UserInfo;
 import com.grupp3.fakestagram.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,7 @@ public class UsersController {
         return testUser;
     }
 
+    //TODO delete in final version?
     @GetMapping("/all")
     public List<User> fetchAllUsers(){
         return userService.getAllUsers();
@@ -39,29 +41,33 @@ public class UsersController {
         userService.registerNewUser(user);
     }
 
-    //TODO fixa så att det är current user eller kanske ta bort
     @PutMapping("/change-password")
-    public void changeUserPassword(@Valid @RequestBody User user,
-                                   @NotBlank @RequestBody String newPassword){
-        userService.changePassword(user, newPassword);
+    public void changeUserPassword(@NotBlank @RequestBody String newPassword){
+        userService.changePassword(newPassword);
     }
 
-    //TODO fixa så att det är current user
     @PutMapping("/change-profile-picture")
-    public void changeProfilePicturePath(@Valid @RequestBody User user,
-                                         @NotBlank @RequestBody String newProfilePicturePath){
-        userService.changeProfilePicture(user, newProfilePicturePath);
+    public void changeProfilePicturePath(@NotBlank @RequestBody String newProfilePicturePath){
+        userService.changeProfilePicture(newProfilePicturePath);
     }
 
-    //TODO fixa så att det är current user
     @PutMapping("/change-bio")
-    public void changeBio(@Valid @RequestBody String username,
-                          @NotBlank @RequestBody String newBio){
-        //userService.changeBio(username, newBio);
+    public void changeBio(@RequestBody String newBio){
+        userService.changeBio(newBio);
     }
 
     @GetMapping("/user-info/{username}")
     public UserInfo getRelevantUserInfoByUsername(@PathVariable String username) {
         return userService.getRelevantUserInfoByUsername(username);
+    }
+//TODO kanske ta bort?
+    @GetMapping("/current-user")
+    public String currentUsername(Authentication authentication) {
+        return authentication.getName();
+    }
+//TODO kanske ta bort
+    @GetMapping("/cu")
+    public User getCurrentUser() {
+        return userService.getCurrentUser();
     }
 }
