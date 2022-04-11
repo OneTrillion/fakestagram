@@ -1,9 +1,17 @@
 import "./HomePage.css";
+import Header from "../header/Header";
+import UserStories from "./UserStories";
+import Feed from "./Feed"
+
 
 function HomePage(){
     return(
         <div className="HomePage">
-            <h2></h2>
+        <Header/>
+            <UserStories/>
+            <Feed/>
+
+
         </div>
     )
 }

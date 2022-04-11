@@ -1,0 +1,35 @@
+
+
+.user-story-cont{
+    margin-top: 20px;
+    width: 650px;
+    margin-left: 300px;
+    padding-top:10px;
+    padding-bottom:5px;
+    border: 1px solid #D8D8D8;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 130px;
+    border-radius: 3px;
+    white-space:nowrap;
+    display: block;
+}
+.user-story-profile{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.username-cont{
+    display:flex;
+    margin-left: 20px;
+}
+
+.user-name{
+    margin-right:25px;
+    font-size: 12px;
+    font-weight:bold;
+}
+
+.user-prof{
+    margin-left: 10px;
+}
