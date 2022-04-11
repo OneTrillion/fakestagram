@@ -8,10 +8,10 @@ function Feed(src, desc, timestamp,likes) {
             <div className="post">
                 <div className="user-cont">
                     <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
-                    <p className="user-n">Username</p>
+                    <p className="user-n">LilBaybay</p>
                 </div>
                 <div className="post-img-cont">
-                <img className="post-img" src={selfie} alt="" />
+                <img className="post-img" src="https://i.pinimg.com/564x/30/c0/e6/30c0e6be1be0d6635b82370359b2e7cb.jpg" />
             </div>
                 <div className="post-description">
                     <p className="user-n">Username</p>
@@ -24,10 +24,10 @@ function Feed(src, desc, timestamp,likes) {
             <div className="post">
                 <div className="user-cont">
                     <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
-                    <p className="user-n">Username</p>
+                    <p className="user-n">KyliesAss</p>
                 </div>
                 <div className="post-img-cont">
-                    <img className="post-img" src={selfie} alt="" />
+                    <img className="post-img" src="https://i.pinimg.com/564x/83/c6/96/83c69622a53af8664ba607c9745bdb49.jpg" />
                 </div>
                 <div className="post-description">
                     <p className="user-n">Username</p>
