@@ -13,11 +13,13 @@ function Nav() {
         <div className="nav">
                 <Dropdown>
 
-                    <HomeIcon/>
-                    <SendIcon/>
-                    <AddBoxIcon/>
-                    <ExploreIcon/>
-                    <FavoriteBorderIcon/>
+                    <div className="dropdown-icons-cont">
+                        <div className="home-icon"><HomeIcon/></div>
+                        <div className="send-icon"> <SendIcon/></div>
+                        <div className="add-box-icon"><AddBoxIcon/></div>
+                        <div className="explore-icon"><ExploreIcon/></div>
+                        <div className="favorite-border-icon"> <FavoriteBorderIcon/></div>
+
                     <Dropdown.Toggle id="dropdown-button-dark-example1" variant="">
                         <AccountCircleRoundedIcon/>
                     </Dropdown.Toggle>
@@ -31,7 +33,9 @@ function Nav() {
                         <Dropdown.Divider />
                         <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item>
                     </Dropdown.Menu>
+                    </div>
                 </Dropdown>
+
 
 
 

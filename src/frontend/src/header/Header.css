@@ -1,4 +1,4 @@
-
+@import url('http://fonts.cdnfonts.com/css/billabong');
 * {
 }
 
@@ -11,31 +11,39 @@
     position: sticky;
     background-color: #ffffff;
     z-index: 100;
-    height:60px;
+    height:70px;
     width: 100%;
     border-bottom: 1px solid #D8D8D8;
 }
 
 .page-logo{
-    font-size: 20px;
+    font-size: 37px;
     margin-left: 300px;
+    font-family: 'Billabong', sans-serif;
 }
 
+.search-icon{
+    opacity: 30%;
+
+}
 
 .searchBar {
     display: flex;
     flex: 1;
     align-items: center;
+    margin-left: 75px;
     max-width: fit-content;
-    padding: 10px;
+    padding: 20px;
     height: 15px;
-    background-color: white;
-    border: 1px solid rgb(144, 143, 143);
+    background-color: #EBEBEB;
+    border: none;
+    height:30px;
     border-radius: 5px;
 }
 .searchBar > input {
-    font-size: 12px;
+    font-size: 15px;
     border: none;
     outline: none;
     width: 200px;
+    background-color:#EBEBEB;
 }
