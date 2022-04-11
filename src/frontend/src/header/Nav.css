@@ -1,0 +1,9 @@
+
+.nav{
+    margin-right:310px;
+    display: flex;
+}
+
+.nav-icons{
+    letter-spacing: 20px;
+}
