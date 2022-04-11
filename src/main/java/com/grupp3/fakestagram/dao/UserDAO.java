@@ -41,5 +41,4 @@ public class UserDAO {
     public void changeBio(User user, String newBio){
         userRepository.setNewBioByUserId(newBio, user.getId());
     }
-
 }
