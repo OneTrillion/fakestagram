@@ -18,7 +18,6 @@ public class PostDAO {
     public Post savePost(Post post){
         return postRepository.save(post);
 
-
     }
 
     public List<Post> viewAllPosts(){

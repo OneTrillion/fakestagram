@@ -16,30 +16,30 @@ public class CommentsController {
 
     CommentService commentService;
 
-    @PostMapping("/submit-comment")
+    @PostMapping("/submit-comment") //klar
     public void submitComment(@NotEmpty @RequestBody Comment comment){
        commentService.submitComment(comment);
     }
 
-   /* @GetMapping("/comment/{id}")
+    @GetMapping("/comment/{id}")//klar
     public Comment showCommentById(@PathVariable Long id){
         return commentService.findCommentById(id);
     }
 
-    @GetMapping("/user-comment/{id}")
+    @GetMapping("/user-comment/{id}")//klar
     public List<Comment> findCommentByUserId(@PathVariable Long id){
-        return commentService.findPostByUser(id);
+        return commentService.findCommentByUserId(id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")//klar
     public void deleteCommentById(@PathVariable Long id){
         commentService.deleteCommentById(id);
     }
 
-    @PutMapping(value = "update/{id}")
+    @PutMapping(value = "update/{id}")//klar
     public void updateCommentById(@RequestBody String newComment,@PathVariable Long id){
         commentService.updateCommentById(newComment, id);
 
-    }*/
+    }
 
 }
