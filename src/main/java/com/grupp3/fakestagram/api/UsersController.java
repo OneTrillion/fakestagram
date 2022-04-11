@@ -39,22 +39,25 @@ public class UsersController {
         userService.registerNewUser(user);
     }
 
+    //TODO fixa så att det är current user eller kanske ta bort
     @PutMapping("/change-password")
     public void changeUserPassword(@Valid @RequestBody User user,
                                    @NotBlank @RequestBody String newPassword){
         userService.changePassword(user, newPassword);
     }
 
+    //TODO fixa så att det är current user
     @PutMapping("/change-profile-picture")
     public void changeProfilePicturePath(@Valid @RequestBody User user,
                                          @NotBlank @RequestBody String newProfilePicturePath){
         userService.changeProfilePicture(user, newProfilePicturePath);
     }
 
+    //TODO fixa så att det är current user
     @PutMapping("/change-bio")
-    public void changeBio(@Valid @RequestBody User user,
+    public void changeBio(@Valid @RequestBody String username,
                           @NotBlank @RequestBody String newBio){
-        userService.changeBio(user, newBio);
+        //userService.changeBio(username, newBio);
     }
 
     @GetMapping("/user-info/{username}")
