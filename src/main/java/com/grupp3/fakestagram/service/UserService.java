@@ -28,10 +28,15 @@ public class UserService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
     private AuthenticationFacade authenticationFacade;
 
+
+    //follow unfollow
+
+
+
     public void registerNewUser(User user){
         String password = user.getPassword();
-        passwordEncoder.encode(password);
-        user.setPassword(password);
+        String encodedPassword = passwordEncoder.encode(password);
+        user.setPassword(encodedPassword);
         userDAO.registerNewUser(user);
     }
 
@@ -94,5 +99,26 @@ public class UserService implements UserDetailsService {
         userInfo.setUsername(allUserDetails.getUsername());
 
         return userInfo;
+    }
+
+    private void checkIfUserIsSame(String username) {
+        String currentUsername = getCurrentUser().getName();
+        if (currentUsername.equalsIgnoreCase(username)) {
+            throw new IllegalStateException("Input username can not be same as logged in user");
+        }
+    }
+
+    public void followUser(String username) {
+        User currentUser = getCurrentUser();
+        User userToFollow = findUserByUsername(username);
+        checkIfUserIsSame(username);
+        currentUser.getFollowerIds().add(userToFollow);
+
+        userDAO.followUser(currentUser);
+    }
+
+    //TODO fixa detta
+    public void unfollowUser(String username) {
+
     }
 }

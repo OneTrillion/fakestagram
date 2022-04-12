@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -45,6 +46,14 @@ public class User implements UserDetails {
     @NotEmpty(message = "profile picture is mandatory")
     private String profilePicturePath;
 
+    @JoinTable
+    @OneToMany
+    private List<User> followerIds;
+
+    @JoinTable
+    @OneToMany
+    private List<User> followingIds;
+
     @NotEmpty(message = "username is mandatory")
     private String username;
 
@@ -73,6 +82,8 @@ public class User implements UserDetails {
                 Integer posts,
                 String bio,
                 String profilePicturePath,
+                List<User> followerIds,
+                List<User> followingIds,
                 String username,
                 String password,
                 Set<? extends GrantedAuthority> grantedAuthorities,
@@ -87,6 +98,8 @@ public class User implements UserDetails {
         this.posts = posts;
         this.bio = bio;
         this.profilePicturePath = profilePicturePath;
+        this.followerIds = followerIds;
+        this.followingIds = followingIds;
         this.username = username;
         this.password = password;
         this.grantedAuthorities = grantedAuthorities;

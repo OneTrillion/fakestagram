@@ -23,21 +23,23 @@ public class UsersController {
 
     private UserService userService;
 
-    @GetMapping("/usertest")
-    public User viewUser(){
-        Set<GrantedAuthority> grantedAuth = new HashSet<>();
-        User testUser = new User("Love",22,7356,2,13,"Live life.", "asdasd","LoveIsLife","password123", grantedAuth, true, true, true, true);
-        return testUser;
-    }
-
-    //TODO delete in final version?
     @GetMapping("/all")
     public List<User> fetchAllUsers(){
         return userService.getAllUsers();
     }
 
+    @PutMapping("/follow/{username}")
+    public void followUser(@PathVariable String username) {
+        userService.followUser(username);
+    }
+
+    @DeleteMapping("/unfollow{username}")
+    public void unfollowUser(@PathVariable String username) {
+        userService.unfollowUser(username);
+    }
+
     @PostMapping("/register-user")
-    public void registerNewUser(@Valid @RequestBody User user){
+    public void registerNewUser(@RequestBody User user){
         userService.registerNewUser(user);
     }
 
