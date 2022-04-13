@@ -31,8 +31,6 @@ public class UserService implements UserDetailsService {
 
     //follow unfollow
 
-
-
     public void registerNewUser(User user){
         String password = user.getPassword();
         String encodedPassword = passwordEncoder.encode(password);
@@ -110,7 +108,7 @@ public class UserService implements UserDetailsService {
 
     public void followUser(String username) {
         User currentUser = getCurrentUser();
-        User userToFollow = findUserByUsername(username);
+        Long userToFollow = findUserByUsername(username).getId();
         checkIfUserIsSame(username);
         currentUser.getFollowerIds().add(userToFollow);
 

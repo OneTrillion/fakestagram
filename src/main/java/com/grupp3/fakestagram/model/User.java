@@ -46,13 +46,11 @@ public class User implements UserDetails {
     @NotEmpty(message = "profile picture is mandatory")
     private String profilePicturePath;
 
-    @JoinTable
-    @OneToMany
-    private List<User> followerIds;
+    @ElementCollection
+    private List<Long> followerIds;
 
-    @JoinTable
-    @OneToMany
-    private List<User> followingIds;
+    @ElementCollection
+    private List<Long> followingIds;
 
     @NotEmpty(message = "username is mandatory")
     private String username;
@@ -75,22 +73,8 @@ public class User implements UserDetails {
     @NotNull
     private boolean isEnabled;
 
-    public User(String name,
-                Integer age,
-                Integer followers,
-                Integer following,
-                Integer posts,
-                String bio,
-                String profilePicturePath,
-                List<User> followerIds,
-                List<User> followingIds,
-                String username,
-                String password,
-                Set<? extends GrantedAuthority> grantedAuthorities,
-                boolean isAccountNonExpired,
-                boolean isAccountNonLocked,
-                boolean isCredentialsNonExpired,
-                boolean isEnabled) {
+//TODO fixa detta
+    public User(String name, Integer age, Integer followers, Integer following, Integer posts, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
         this.name = name;
         this.age = age;
         this.followers = followers;
