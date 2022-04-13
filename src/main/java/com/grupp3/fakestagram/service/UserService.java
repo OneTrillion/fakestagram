@@ -106,17 +106,24 @@ public class UserService implements UserDetailsService {
         }
     }
 
+    //TODO: code duplication i follow och unfollow, fixa detta
     public void followUser(String username) {
         User currentUser = getCurrentUser();
         Long userToFollow = findUserByUsername(username).getId();
         checkIfUserIsSame(username);
-        currentUser.getFollowerIds().add(userToFollow);
+        currentUser.getFollowingIds().add(userToFollow);
 
         userDAO.followUser(currentUser);
     }
 
-    //TODO fixa detta
+    //TODO ditto ^^^
     public void unfollowUser(String username) {
+        User currentUser = getCurrentUser();
+        Long userToFollow = findUserByUsername(username).getId();
+        checkIfUserIsSame(username);
+        currentUser.getFollowingIds().remove(userToFollow);
+
+        userDAO.unfollowUser(currentUser);
 
     }
 }
