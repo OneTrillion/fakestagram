@@ -126,6 +126,9 @@ img.post-img{
 }
 
 .side-cont{
+    text-align: right;
+    left:60%;
+    position: fixed;
     margin-left: 25px;
     margin-top: 15px;
 }
