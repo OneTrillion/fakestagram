@@ -2,6 +2,10 @@
 * {
 }
 
+body{
+    background-color: #F6F6F6;
+}
+
 .header {
     display: flex;
     margin-left: 0px;
@@ -19,7 +23,7 @@
 .page-logo{
     font-size: 37px;
     margin-left: 300px;
-    margin-top:6px;
+    margin-top:10px;
     font-family: 'Billabong', sans-serif;
 }
 

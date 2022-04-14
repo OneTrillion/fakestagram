@@ -13,10 +13,13 @@
     border-radius: 3px;
     white-space:nowrap;
     display: block;
+    background-color: #ffffff;
 }
-.user-story-profile{
+.user-story-profile-cont{
     display: flex;
     margin-bottom: 5px;
+    padding:4px;
+
 }
 
 .username-cont{
@@ -25,11 +28,14 @@
 }
 
 .user-name{
-    margin-right:25px;
-    font-size: 12px;
-    font-weight:bold;
+    margin-right:34px;
+    font-size: 11px;
+    text-align: center;
+
 }
 
 .user-prof{
-    margin-left: 10px;
+    border-radius: 100px;
+    margin-left: 15px;
+    border: 3px solid #F4911C;
 }

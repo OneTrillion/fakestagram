@@ -30,3 +30,13 @@
     margin-right: 5px;
     margin-top:6px;
 }
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none;
+    box-shadow:none;
+}

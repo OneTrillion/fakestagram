@@ -1,5 +1,6 @@
 
 .post{
+    background-color: #ffffff;
     border: 1px solid #D8D8D8;
     padding-top: 10px;
     padding-left:4px;
@@ -17,16 +18,23 @@
     display: flex;
     border-bottom: 1px solid #D8D8D8;
     width:645px;
-    padding-right:3px;
+    padding-left:7px;
 }
 
 
 p.user-n{
-    margin-left: 3px;
-    margin-top: 15px;
+    margin-left: 10px;
+    margin-top: 13px;
     font-size: 13px;
     font-weight:bold;
 }
+
+.more{
+    float: right;
+    margin-left:490px;
+    margin-top:8px;
+}
+
 
 .post-img-cont{
     max-width: 650px;
@@ -38,14 +46,81 @@ img.post-img{
     padding-top:3px;
 }
 
-.post-description{
+.desc-cont{
     display:flex;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.icons-cont{
+    display:flex;
+}
+
+.like-icon{
+    margin-right:10px;
+    margin-left:10px;
+    margin-top:5px;
+}
+
+.like-icon:hover{
+    opacity: 50%;
+}
+.comment-icon{
+    margin-right:10px;
+    margin-top:5px;
+}
+.comment-icon:hover{
+    opacity: 50%;
+}
+.share-icon{
+    margin-top:4px;
+}
+
+.share-icon:hover{
+    opacity: 50%;
+}
+
+.save-icon{
+    margin-left:510px;
+    margin-top:5px;
+}
+
+.save-icon:hover{
+    opacity: 50%;
+}
+
+.post-description{
+    display:block;
+}
+
+.likes-amount{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 .desc-text{
     font-size: 13px;
     text-align: left;
     margin-left: 5px;
-    margin-top:15px;
+    margin-top:13px;
 
+}
+.comment-cont{
+    display: flex;
+    padding-left: 10px;
+    padding-top:10px;
+    margin-bottom: 10px;
+
+}
+
+.smiley-icon{
+    margin-right: 10px;
+}
+
+.comment > input {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    width: 200px;
+    background-color:#ffffff;
 }
