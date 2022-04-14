@@ -45,4 +45,8 @@ public class UserDAO {
     public void followUser(User user) {
         userRepository.save(user);
     }
+
+    public void unfollowUser(User user) {
+        userRepository.save(user);
+    }
 }
