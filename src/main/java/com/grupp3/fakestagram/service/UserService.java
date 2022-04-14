@@ -80,6 +80,7 @@ public class UserService implements UserDetailsService {
 
     }
 
+    //TODO fixa så att den har followersIds
     public UserInfo getRelevantUserInfoByUsername(String username) {
         UserInfo userInfo = new UserInfo();
         User allUserDetails = userDAO.selectUserByUsername(username)
@@ -91,7 +92,7 @@ public class UserService implements UserDetailsService {
         userInfo.setAge(allUserDetails.getAge());
         userInfo.setFollowers(allUserDetails.getFollowers());
         userInfo.setFollowing(allUserDetails.getFollowing());
-        userInfo.setPosts(allUserDetails.getPosts());
+        //userInfo.setPostIds(allUserDetails.getPostsIds());
         userInfo.setBio(allUserDetails.getBio());
         userInfo.setProfilePicturePath(allUserDetails.getProfilePicturePath());
         userInfo.setUsername(allUserDetails.getUsername());
@@ -126,4 +127,5 @@ public class UserService implements UserDetailsService {
         userDAO.unfollowUser(currentUser);
 
     }
+
 }

@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -17,25 +18,23 @@ import java.time.LocalDate;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-//
     private Long id;
+
+    private Long userId;
     private String description;
-    @NotNull (message = "0")
-    private Integer likes;
+
+    //TODO fixa detta VVVV
+    @ElementCollection
+    private List<Long> likedByUser;
     @NotEmpty(message = "Please type in date to continue")
     private String date;
     private String img;
-    private Long userId;
 
-    public Post(String description, int likes, String date, Long userId, String img) {
-        this.description = description;
-        this.likes = likes;
-        this.date = date;
+    public Post(Long userId, String description, List<Long> likedByUser, String date, String img) {
         this.userId = userId;
+        this.description = description;
+        this.likedByUser = likedByUser;
+        this.date = date;
         this.img = img;
     }
-
-
-
-
 }

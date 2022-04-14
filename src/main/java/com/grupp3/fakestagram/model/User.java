@@ -38,7 +38,7 @@ public class User implements UserDetails {
     private Integer following;
 
     @NotNull(message = "posts is mandatory")
-    private Integer posts;
+    private Integer postsAmount;
 
     @NotEmpty(message = "bio is mandatory")
     private String bio;
@@ -74,12 +74,14 @@ public class User implements UserDetails {
     private boolean isEnabled;
 
 //TODO fixa detta
-    public User(String name, Integer age, Integer followers, Integer following, Integer posts, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
+
+
+    public User(String name, Integer age, Integer followers, Integer following, Integer postsAmount, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
         this.name = name;
         this.age = age;
         this.followers = followers;
         this.following = following;
-        this.posts = posts;
+        this.postsAmount = postsAmount;
         this.bio = bio;
         this.profilePicturePath = profilePicturePath;
         this.followerIds = followerIds;

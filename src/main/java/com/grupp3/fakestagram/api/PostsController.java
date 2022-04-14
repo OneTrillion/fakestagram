@@ -21,8 +21,8 @@ public class PostsController {
 
 
     @PostMapping("/make-post") //funkar
-    public void makePost( @Valid @RequestBody Post post){
-        postService.makePost(post);
+    public Long makePost( @Valid @RequestBody Post post){
+        return postService.makePost(post).getId();
     }
 
     @GetMapping("/view-posts") //funkar

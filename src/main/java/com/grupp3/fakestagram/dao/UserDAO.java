@@ -4,7 +4,6 @@ import com.grupp3.fakestagram.model.User;
 import com.grupp3.fakestagram.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
