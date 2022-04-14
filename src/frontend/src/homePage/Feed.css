@@ -124,3 +124,21 @@ img.post-img{
     width: 200px;
     background-color:#ffffff;
 }
+
+.side-cont{
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.feed{
+    display: flex;
+}
+
+.suggestions-title{
+    text-align: left;
+    margin-left: 25px;
+}
+
+.post-comment{
+    margin-left: 300px;
+}

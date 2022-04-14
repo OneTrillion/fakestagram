@@ -1,0 +1,18 @@
+
+.side-suggestions-cont{
+    display: flex;
+    padding: 6px;
+}
+
+.user-profile-box{
+    border-radius: 100%;
+    margin-left: 15px;
+}
+
+
+.follow{
+    margin-left: 100px;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 13px;
+}

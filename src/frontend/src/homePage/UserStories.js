@@ -32,44 +32,11 @@ function UserStories() {
                 <div className="user-prof">
                     <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
                 </div>
-                <div className="user-prof">
-                    <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
-                </div>
-                <div className="user-prof">
-                    <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
-                </div>
-                <div className="user-prof">
-                    <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
-                </div>
-                <div className="user-prof">
-                    <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
-                </div>
-                <div className="user-prof">
-                    <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
-                </div>
-                <div className="user-prof">
-                    <AccountCircleRoundedIcon sx={{ fontSize: 60 }}/>
-                </div>
-
             </div>
+
             <div className="username-cont">
                 <div className="user-name">
                <a href="url">Username</a>
-                </div>
-                <div className="user-name">
-                    <a href="url">Username</a>
-                </div>
-                <div className="user-name">
-                    <a href="url">Username</a>
-                </div>
-                <div className="user-name">
-                    <a href="url">Username</a>
-                </div>
-                <div className="user-name">
-                    <a href="url">Username</a>
-                </div>
-                <div className="user-name">
-                    <a href="url">Username</a>
                 </div>
                 <div className="user-name">
                     <a href="url">Username</a>

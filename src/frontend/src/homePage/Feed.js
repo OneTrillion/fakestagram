@@ -8,11 +8,14 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import SideSuggestions from "./SideSuggestions";
 
 function Feed() {
 
     return (
         <div className="feed">
+
+            <div className="post-cont">
             <div className="post">
                 <div className="user-cont">
                     <AccountCircleRoundedIcon sx={{ fontSize: 45 }}/>
@@ -39,6 +42,7 @@ function Feed() {
                 <div className="comment-cont">
                     <div className="smiley-icon"><SentimentSatisfiedAltIcon sx={{ fontSize: 28 }}/></div>
                     <div className="comment"><input type="text"placeholder="Add a commment..."></input></div>
+                    <p className="post-comment"><a href="url">Post</a></p>
                 </div>
             </div>
 
@@ -67,6 +71,7 @@ function Feed() {
                 <div className="comment-cont">
                     <div className="smiley-icon"><SentimentSatisfiedAltIcon sx={{ fontSize: 28 }}/></div>
                     <div className="comment"><input type="text"placeholder="Add a commment..."></input></div>
+                    <p className="post-comment"><a href="url">Post</a></p>
                 </div>
             </div>
 
@@ -94,6 +99,7 @@ function Feed() {
                 <div className="comment-cont">
                     <div className="smiley-icon"><SentimentSatisfiedAltIcon sx={{ fontSize: 28 }}/></div>
                     <div className="comment"><input type="text"placeholder="Add a commment..."></input></div>
+                    <p className="post-comment"><a href="url">Post</a></p>
                 </div>
             </div>
             <div className="post">
@@ -120,8 +126,19 @@ function Feed() {
                 <div className="comment-cont">
                     <div className="smiley-icon"><SentimentSatisfiedAltIcon sx={{ fontSize: 28 }}/></div>
                     <div className="comment"><input type="text"placeholder="Add a commment..."></input></div>
+                    <p className="post-comment"><a href="url">Post</a></p>
                 </div>
             </div>
+            </div>
+            <div className="side-cont">
+                <p className="suggestions-title">Suggestions for you</p>
+                <SideSuggestions/>
+                <SideSuggestions/>
+                <SideSuggestions/>
+                <SideSuggestions/>
+                <SideSuggestions/>
+            </div>
+
         </div>
 
     );
