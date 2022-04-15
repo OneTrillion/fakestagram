@@ -36,14 +36,14 @@ public class PostDAO {
     public void deletePostById(Long id){
     postRepository.deleteById(id);
     }
-//
 
-    public void likePost(){
-
+    //TODO duplicate code, gör metod "save post" och refactor
+    public void likePost(Post post){
+        postRepository.save(post);
     }
 
-    public void unlikePost(){
-
+    public void unlikePost(Post post){
+        postRepository.save(post);
     }
 
     public void updatePostById(String newPostDesc, Long id) {

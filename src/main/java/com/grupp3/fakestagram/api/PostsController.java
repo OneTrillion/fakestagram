@@ -51,13 +51,13 @@ public class PostsController {
 
     }
 
-    @PutMapping("add/like")
-    public void likePost(){
-
+    @PutMapping("/like/{postId}")
+    public void likePost(@PathVariable Long postId){
+        postService.likePost(postId);
     }
-    @PutMapping("add/unlike")
-    public void unlikePost(){
-
+    @PutMapping("/unlike/{postId}")
+    public void unlikePost(@PathVariable Long postId){
+        postService.unlikePost(postId);
     }
 
 }

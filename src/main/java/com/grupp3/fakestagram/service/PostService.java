@@ -2,19 +2,32 @@ package com.grupp3.fakestagram.service;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.grupp3.fakestagram.dao.PostDAO;
+import com.grupp3.fakestagram.dao.UserDAO;
 import com.grupp3.fakestagram.model.Post;
 import com.grupp3.fakestagram.model.User;
+import com.grupp3.fakestagram.security.AuthenticationFacade;
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class PostService {
-    PostDAO postDAO;
+    private PostDAO postDAO;
+    private UserDAO userDAO;
+    private AuthenticationFacade authenticationFacade;
 
-    public PostService(PostDAO postDAO) {
-        this.postDAO = postDAO;
+    //TODO code duplication fix VVVV
+    private Long getCurrentUserId() {
+        Authentication authentication = authenticationFacade.getAuthentication();
+        User currentUser = userDAO.selectUserByUsername(authentication.getName())
+                .orElseThrow(() -> new UsernameNotFoundException("User with that name not found"));
+        return currentUser.getId();
     }
+
 
     public Post makePost(Post post){ //klar
         return postDAO.savePost(post);
@@ -40,7 +53,23 @@ public class PostService {
         postDAO.deletePostById(id);
     }
 
-    public Integer likePost(Long id){
+    private boolean checkIfPostIsLikedById(Post post, Long userId) {
+        List<Long> usersThatLiked = post.getLikedByUser();
+        return usersThatLiked.contains(userId);
+    }
+
+    public void likePost(Long id){
+        Long userId = getCurrentUserId();
+        Post post = findPostById(id);
+        boolean isLiked = checkIfPostIsLikedById(post, userId);
+
+        if (!isLiked) {
+            post.getLikedByUser().add(userId);
+            postDAO.likePost(post);
+        }
+        //TODO kanske lägg till error message om man redan har likeat
+
+
      //alla post likes börjar på 0
         // klickar du en gång ökar värdet med 1
         // klickar du igen minskar värdet -1
@@ -73,11 +102,18 @@ public class PostService {
             responseObj.setPayload(targetPost);
             return responseObj;
         }*/
-        return null;
     }
 
-    public void unlikePost(){
+    //TODO duplicate code fixa (Samma som like med liten skildnad)
+    public void unlikePost(Long id){
+        Long userId = getCurrentUserId();
+        Post post = findPostById(id);
+        boolean isLiked = checkIfPostIsLikedById(post, userId);
 
+        if (isLiked) {
+            post.getLikedByUser().remove(userId);
+            postDAO.unlikePost(post);
+        }
     }
 
     public void updatePostById(String newPostDesc, Long id) {
