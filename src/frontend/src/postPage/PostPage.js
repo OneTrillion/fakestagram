@@ -6,8 +6,13 @@ function PostPage() {
     //TODO Fixa så att urlen och texten sparas
 
     const [image, setImage] = useState('');
+    const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(false);
     const [uploaded, setUploaded] = useState(false);
+
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value);
+    }
 
     const uploadImage = async e => {
         const files = e.target.files;
@@ -27,6 +32,7 @@ function PostPage() {
         setUploaded(true);
     }
 
+    //TODO fixa detta VVVV
     const makePost = () => {
         const currenDate = Date().toLocaleString();
         let postId = 0;
@@ -50,39 +56,36 @@ function PostPage() {
 
     return (
         <Container>
-            <Col>
-                <Row style={{backgroundColor: "gray"}} className={"align-items-center"}>
-                    <Col>
-                        { loading ? (
-                            <h3>Loading...</h3>
+            <Row style={{backgroundColor: "gray", height: "50vh"}} className={"align-items-center"} >
+                <Col>
+                    { loading ? (
+                        <h3>Loading...</h3>
+                    ): (
+                        !uploaded ? (
+                            <UploadIcon style={{fontSize: "50vh" }} />
                         ): (
-                            !uploaded ? (
-                                <UploadIcon style={{fontSize: "500px" }} />
-                            ): (
-                                <img src={image} style={{width: '300px'}} alt={"asdasd"}/>
-                            )
-                        )}
-                    </Col>
+                            <img src={image} style={{width: '300px'}} alt={"asdasd"}/>
+                        )
+                    )}
+                </Col>
 
-                </Row>
-                <Row>
-
-                    <input
-                        type={"file"}
-                        name={"file"}
-                        placeholder={"Upload an image"}
-                        onChange={uploadImage}
-                    />
-                </Row>
-                <Row>
-                   <Form>
-                       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                           <Form.Label>Example textarea</Form.Label>
-                           <Form.Control as="textarea" rows={3} />
-                       </Form.Group>
-                   </Form>
-                </Row>
-            </Col>
+            </Row>
+            <Row>
+                <input
+                    type={"file"}
+                    name={"file"}
+                    placeholder={"Upload an image"}
+                    onChange={uploadImage}
+                />
+            </Row>
+            <Row>
+               <Form>
+                   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                       <Form.Control as="textarea" rows={3} placeholder={"Description..."} onChange={handleDescriptionChange} />
+                   </Form.Group>
+                   <Button variant="primary" type="submit" onClick={makePost}>POST</Button>
+               </Form>
+            </Row>
 
         </Container>
     )
