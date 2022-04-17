@@ -1,6 +1,7 @@
 import {useState} from "react";
 import UploadIcon from '@mui/icons-material/Upload';
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
+import {createPost, uploadImageCloud} from "../client";
 
 function PostPage() {
     //TODO Fixa så att urlen och texten sparas
@@ -12,9 +13,11 @@ function PostPage() {
 
     const handleDescriptionChange = (e) => {
         setDescription(e.target.value);
+        console.log(description);
+        console.log(typeof description);
     }
-
-    const uploadImage = async e => {
+/*
+    const uploadImage2 = async e => {
         const files = e.target.files;
         const data = new FormData();
         data.append('file', files[0]);
@@ -31,27 +34,44 @@ function PostPage() {
         setLoading(false);
         setUploaded(true);
     }
+ */
+    const uploadImage = (e) => {
+        const files = e.target.files;
+        const payload = new FormData();
+        payload.append('file', files[0]);
+        payload.append('upload_preset', 'fakestagram')
+        setLoading(true);
 
-    //TODO fixa detta VVVV
+        uploadImageCloud(payload)
+            .then(res => res.json())
+            .then(file => setImage(file.secure_url))
+            .catch(err => console.log(err.response))
+
+        setLoading(false);
+        setUploaded(true);
+    }
+
+
+    //TODO fixa med userid, testa med formdata??
     const makePost = () => {
         const currenDate = Date().toLocaleString();
-        let postId = 0;
 
-        fetch("/api/v1/post/make-post", {
-            method: 'POST',
-            body: {
-                description: "asdasd",
-                likedByUser: null,
-                date: currenDate,
-                img: image
-            }
-        })
-            .then(res => res.json())
-            .then(data => postId = data)
+        console.log(description + typeof description);
+        console.log(currenDate + typeof currenDate);
+        console.log(image + typeof image);
 
-        fetch("/api/v1/users/post-id/{postId}", {
-            method: 'PUT'
-        })
+        /*
+        const payload = new FormData();
+
+        payload.append('userId', '4')
+        payload.append('description', 'testdescription')
+        payload.append('likedByUser', null)
+        payload.append('date', '1a januari')
+        payload.append('img', image)
+*/
+
+        createPost()
+            .catch(err => console.log(err.response))
     }
 
     return (
@@ -79,12 +99,12 @@ function PostPage() {
                 />
             </Row>
             <Row>
-               <Form>
-                   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                       <Form.Control as="textarea" rows={3} placeholder={"Description..."} onChange={handleDescriptionChange} />
-                   </Form.Group>
-                   <Button variant="primary" type="submit" onClick={makePost}>POST</Button>
-               </Form>
+                <Form>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                        <Form.Control as="textarea" rows={3} placeholder={"Description..."} onChange={handleDescriptionChange} />
+                    </Form.Group>
+                </Form>
+                <Button variant="primary" type="submit" onClick={makePost}>POST</Button>
             </Row>
 
         </Container>
