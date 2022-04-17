@@ -4,6 +4,8 @@ import com.grupp3.fakestagram.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -24,11 +26,15 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers(
+                        HttpMethod.OPTIONS,
+                        "/index*", "/static/**", "/*.js", "/*.json", "/*.ico")
+                .permitAll()
                 //.antMatchers("/**").permitAll() //TODO ta bort när vi är klara (gör så att man inte behöver logga in)
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/index", true)
+                .defaultSuccessUrl("/index.html", true)
                 .and()
                 .logout()
                 .clearAuthentication(true)
