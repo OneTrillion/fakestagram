@@ -3,16 +3,19 @@ package com.grupp3.fakestagram.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @Entity
 @Table
 public class Post {
@@ -23,10 +26,9 @@ public class Post {
     private Long userId;
     private String description;
 
-    //TODO fixa detta VVVV
     @ElementCollection
     private List<Long> likedByUser;
-    @NotEmpty(message = "Please type in date to continue")
+
     private String date;
     private String img;
 

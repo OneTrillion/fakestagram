@@ -20,8 +20,8 @@ public class PostsController {
     PostService postService;
 
 
-    @PostMapping("/make-post") //funkar
-    public Long makePost( @Valid @RequestBody Post post){
+    @PostMapping(value = "/make-post") //funkar
+    public Long makePost(@Valid @RequestBody Post post){
         return postService.makePost(post).getId();
     }
 

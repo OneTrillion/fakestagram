@@ -30,6 +30,8 @@ public class PostService {
 
 
     public Post makePost(Post post){ //klar
+        Long currentUserId = getCurrentUserId();
+        post.setUserId(currentUserId);
         return postDAO.savePost(post);
     }
 
