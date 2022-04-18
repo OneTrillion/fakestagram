@@ -1,7 +1,7 @@
 import {useState} from "react";
 import UploadIcon from '@mui/icons-material/Upload';
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
-import {createPost, uploadImageCloud} from "../client";
+import {createPost, uploadImageCloud} from "../../client";
 
 function PostPage() {
     //TODO Fixa så att urlen och texten sparas
