@@ -16,25 +16,7 @@ function PostPage() {
         console.log(description);
         console.log(typeof description);
     }
-/*
-    const uploadImage2 = async e => {
-        const files = e.target.files;
-        const data = new FormData();
-        data.append('file', files[0]);
-        data.append('upload_preset', 'fakestagram')
-        setLoading(true);
-        const res = await fetch('https://api.cloudinary.com/v1_1/dg1uypbkk/image/upload',
-            {
-                method: 'POST',
-                body: data
-            })
-        const file = await res.json();
 
-        setImage(file.secure_url);
-        setLoading(false);
-        setUploaded(true);
-    }
- */
     const uploadImage = (e) => {
         const files = e.target.files;
         const payload = new FormData();
@@ -51,26 +33,10 @@ function PostPage() {
         setUploaded(true);
     }
 
-
-    //TODO fixa med userid, testa med formdata??
     const makePost = () => {
         const currenDate = Date().toLocaleString();
 
-        console.log(description + typeof description);
-        console.log(currenDate + typeof currenDate);
-        console.log(image + typeof image);
-
-        /*
-        const payload = new FormData();
-
-        payload.append('userId', '4')
-        payload.append('description', 'testdescription')
-        payload.append('likedByUser', null)
-        payload.append('date', '1a januari')
-        payload.append('img', image)
-*/
-
-        createPost()
+        createPost(description, currenDate, image)
             .catch(err => console.log(err.response))
     }
 
@@ -84,11 +50,10 @@ function PostPage() {
                         !uploaded ? (
                             <UploadIcon style={{fontSize: "50vh" }} />
                         ): (
-                            <img src={image} style={{width: '300px'}} alt={"asdasd"}/>
+                            <img src={image} style={{width: '300px'}} alt={"placeholder"}/>
                         )
                     )}
                 </Col>
-
             </Row>
             <Row>
                 <input
@@ -106,7 +71,6 @@ function PostPage() {
                 </Form>
                 <Button variant="primary" type="submit" onClick={makePost}>POST</Button>
             </Row>
-
         </Container>
     )
 }

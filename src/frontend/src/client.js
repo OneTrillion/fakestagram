@@ -15,7 +15,7 @@ export const getAllUsers = () =>
         .then(checkStatus);
 
 
-export const createPost = () =>
+export const createPost = (desc, currDate, img) =>
     fetch("/api/v1/post/make-post", {
         method: 'POST',
         headers: {
@@ -23,35 +23,13 @@ export const createPost = () =>
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            userId: 2,
-            description: "hehedheh",
+            userId: null,
+            description: desc,
             likedByUser: null,
-            date: "1 january",
-            img: "asdadsasd.com"
+            date: currDate,
+            img: img
         })
-        /*
-        headers: {
-            Accept: 'application/json'
-        },
-        body: payload
-
-         */
-        /*
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: {
-            "userId" : null,
-            "description": "temp description",
-            "likedByUser": [2],
-            "date": "1 januari",
-            "img": image
-        }
-         */
     }).then(checkStatus);
-
 
 export const uploadImageCloud = (payload) =>
     fetch('https://api.cloudinary.com/v1_1/dg1uypbkk/image/upload', {
