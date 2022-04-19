@@ -36,3 +36,16 @@ export const uploadImageCloud = (payload) =>
         method: 'POST',
         body: payload
     }).then(checkStatus);
+
+export const getAllPosts = () =>
+    fetch("api/v1/post/view-posts")
+        .then(checkStatus)
+
+
+export const getCurrentUserInfo = () =>
+    fetch("api/v1/users/current-user")
+        .then(checkStatus)
+
+export const getUserInfoByUsername = (username) =>
+    fetch(`api/v1/users/user-info/${username}`)
+        .then(checkStatus)
