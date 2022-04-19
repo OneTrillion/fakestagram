@@ -1,7 +1,8 @@
 import "./HomePage.css";
 import Header from "../header/Header";
 import UserStories from "./UserStories";
-import Feed from "./Feed"
+import Post from "./Post"
+import SideSuggestions from "./SideSuggestions";
 
 
 function HomePage(){
@@ -9,7 +10,19 @@ function HomePage(){
         <div className="HomePage">
         <Header/>
             <UserStories/>
-            <Feed/>
+            <Post/>
+            <Post/>
+            <Post/>
+            <Post/>
+
+            <div className="side-cont">
+                <p className="suggestions-title">Suggestions for you</p>
+                <SideSuggestions/>
+                <SideSuggestions/>
+                <SideSuggestions/>
+                <SideSuggestions/>
+                <SideSuggestions/>
+            </div>
 
 
         </div>

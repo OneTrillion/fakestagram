@@ -1,0 +1,16 @@
+
+.homePage{
+    display: flex;
+
+}
+.side-cont{
+    position: fixed;
+    text-align: right;
+    margin-left: 970px;
+    margin-top: -3000px;
+}
+
+.suggestions-title{
+    text-align: left;
+    margin-left: 25px;
+}

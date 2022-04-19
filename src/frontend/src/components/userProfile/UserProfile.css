@@ -1,0 +1,83 @@
+.top-profile-cont{
+    display: flex;
+    width:900px;
+    margin-left: 340px;
+}
+.profile-info-cont{
+    align-items: center;
+    display: flex;
+    margin-top: 30px;
+    height:60px;
+    margin-left: 100px;
+}
+
+.top-profile-img{
+    margin-left: 40px;
+
+}
+
+.profile-username{
+    margin-right: 20px;
+    font-size: 27px;
+    font-weight: lighter;
+}
+
+.edit-profile{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+    background-color: #FAFAFA;
+}
+
+.icon-settings{
+    margin-left: 10px;
+}
+
+.status-cont{
+    display: flex;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.post-count{
+    margin-right: 35px;
+}
+.followers-count{
+    margin-right: 35px;
+}
+
+.following-count{
+    margin-right: 35px;
+}
+
+.desc-cont{
+    width:300px;
+    margin-left: 100px;
+
+}
+
+.side-info-cont{
+    display: block;
+    align-items: center;
+}
+
+.top-section{
+    display: flex;
+}
+.user-post-img{
+    object-fit: cover;
+    width:287px;
+    height:287px;
+}
+
+.post-box{
+    margin-top:20px;
+    margin-left: 20px;
+}
+
+.post-cont{
+    display: flex;
+    margin-left: 320px;
+    width:500px;
+}

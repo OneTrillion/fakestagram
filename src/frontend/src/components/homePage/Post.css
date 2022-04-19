@@ -125,23 +125,21 @@ img.post-img{
     background-color:#ffffff;
 }
 
-.side-cont{
-    text-align: right;
-    left:60%;
-    position: fixed;
-    margin-left: 25px;
-    margin-top: 15px;
-}
-
 .feed{
     display: flex;
 }
 
-.suggestions-title{
-    text-align: left;
-    margin-left: 25px;
-}
 
 .post-comment{
     margin-left: 300px;
+}
+
+.posted-comments{
+    display: flex;
+}
+
+.comment-posted{
+    margin-top:11px;
+    font-size: 15px;
+    margin-left: 10px;
 }

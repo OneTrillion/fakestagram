@@ -2,6 +2,7 @@ import {useState} from "react";
 import UploadIcon from '@mui/icons-material/Upload';
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import {createPost, uploadImageCloud} from "../../client";
+import "./PostPage.css"
 
 function PostPage() {
     //TODO Fixa så att urlen och texten sparas
@@ -41,6 +42,7 @@ function PostPage() {
     }
 
     return (
+        <div className="post-page-cont">
         <Container>
             <Row style={{backgroundColor: "gray", height: "50vh"}} className={"align-items-center"} >
                 <Col>
@@ -72,6 +74,7 @@ function PostPage() {
                 <Button variant="primary" type="submit" onClick={makePost}>POST</Button>
             </Row>
         </Container>
+        </div>
     )
 }
 

@@ -10,13 +10,17 @@ import PermIdentityRoundedIcon from '@mui/icons-material/PermIdentityRounded';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SettingsIcon from '@mui/icons-material/Settings';
 import "./Nav.css";
+import {useNavigate} from "react-router-dom";
 
 function Nav() {
+
+   // const history = useNavigate();
     return(
         <div className="nav">
                 <Dropdown>
 
                     <div className="dropdown-icons-cont">
+
                         <div className="home-icon"><a href="url"><HomeIcon/></a></div>
                         <div className="send-icon"> <a href="url"><SendIcon/></a></div>
                         <div className="add-box-icon"><a href="url"><AddBoxIcon/></a></div>

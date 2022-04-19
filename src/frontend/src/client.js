@@ -49,3 +49,4 @@ export const getCurrentUserInfo = () =>
 export const getUserInfoByUsername = (username) =>
     fetch(`api/v1/users/user-info/${username}`)
         .then(checkStatus)
+

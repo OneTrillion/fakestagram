@@ -4,26 +4,30 @@
     margin-top: 20px;
     width: 650px;
     margin-left: 300px;
-    padding-top:10px;
-    padding-bottom:5px;
+    padding-top:5px;
+    padding-bottom:0px;
     border: 1px solid #D8D8D8;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    height: 130px;
+    height: 120px;
     border-radius: 3px;
-    white-space:nowrap;
     display: block;
     background-color: #ffffff;
 }
+
+
 .user-story-profile-cont{
     display: flex;
-    margin-bottom: 5px;
     padding:4px;
+    white-space:nowrap;
+    overflow-x: scroll;
 
 }
 
+.user-story-profile-cont::-webkit-scrollbar{
+    display: none;
+}
+
 .username-cont{
-    display:flex;
+    display:block;
     margin-left: 15px;
 }
 
@@ -36,7 +40,7 @@
 }
 
 .user-prof{
-    border-radius: 100px;
-    margin-left: 15px;
-    border: 3px solid #F4911C;
+margin-top:7px;
+    margin-left: 10px;
+    display: flex;
 }
