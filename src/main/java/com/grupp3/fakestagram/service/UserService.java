@@ -28,14 +28,11 @@ public class UserService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
     private AuthenticationFacade authenticationFacade;
 
-
-    //follow unfollow
-
     public void registerNewUser(User user){
         String password = user.getPassword();
         String encodedPassword = passwordEncoder.encode(password);
         user.setPassword(encodedPassword);
-        userDAO.registerNewUser(user);
+        userDAO.saveUserState(user);
     }
 
     public void changePassword(String newPassword){
@@ -80,22 +77,31 @@ public class UserService implements UserDetailsService {
 
     }
 
-    //TODO fixa så att den har followersIds
     public UserInfo getRelevantUserInfoByUsername(String username) {
-        UserInfo userInfo = new UserInfo();
         User allUserDetails = userDAO.selectUserByUsername(username)
                         .orElseThrow(() ->
                                 new UsernameNotFoundException(String.format("Username %s not found", username))
                         );
 
-        userInfo.setName(allUserDetails.getName());
-        userInfo.setAge(allUserDetails.getAge());
-        userInfo.setFollowers(allUserDetails.getFollowers());
-        userInfo.setFollowing(allUserDetails.getFollowing());
-        //userInfo.setPostIds(allUserDetails.getPostsIds());
-        userInfo.setBio(allUserDetails.getBio());
-        userInfo.setProfilePicturePath(allUserDetails.getProfilePicturePath());
-        userInfo.setUsername(allUserDetails.getUsername());
+        return  setRelevantUserInfo(allUserDetails);
+    }
+
+    public UserInfo getRelevantUserInfo() {
+        User currentUser = getCurrentUser();
+
+        return setRelevantUserInfo(currentUser);
+    }
+
+    private UserInfo setRelevantUserInfo(User user) {
+        UserInfo userInfo = new UserInfo();
+
+        userInfo.setName(user.getName());
+        userInfo.setAge(user.getAge());
+        userInfo.setBio(user.getBio());
+        userInfo.setProfilePicturePath(user.getProfilePicturePath());
+        userInfo.setUsername(user.getUsername());
+        userInfo.setFollowerIds(user.getFollowerIds());
+        userInfo.setFollowingIds(user.getFollowingIds());
 
         return userInfo;
     }
@@ -107,24 +113,22 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    //TODO: code duplication i follow och unfollow, fixa detta
     public void followUser(String username) {
         User currentUser = getCurrentUser();
         Long userToFollow = findUserByUsername(username).getId();
         checkIfUserIsSame(username);
         currentUser.getFollowingIds().add(userToFollow);
 
-        userDAO.followUser(currentUser);
+        userDAO.saveUserState(currentUser);
     }
 
-    //TODO ditto ^^^
     public void unfollowUser(String username) {
         User currentUser = getCurrentUser();
         Long userToFollow = findUserByUsername(username).getId();
         checkIfUserIsSame(username);
         currentUser.getFollowingIds().remove(userToFollow);
 
-        userDAO.unfollowUser(currentUser);
+        userDAO.saveUserState(currentUser);
 
     }
 

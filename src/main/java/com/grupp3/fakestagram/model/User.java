@@ -31,12 +31,6 @@ public class User implements UserDetails {
     @NotNull(message = "age is mandatory")
     private Integer age;
 
-    @NotNull(message = "followers is mandatory")
-    private Integer followers;
-
-    @NotNull(message = "following is mandatory")
-    private Integer following;
-
     @NotNull(message = "posts is mandatory")
     private Integer postsAmount;
 
@@ -76,11 +70,9 @@ public class User implements UserDetails {
 //TODO fixa detta
 
 
-    public User(String name, Integer age, Integer followers, Integer following, Integer postsAmount, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
+    public User(String name, Integer age, Integer postsAmount, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
         this.name = name;
         this.age = age;
-        this.followers = followers;
-        this.following = following;
         this.postsAmount = postsAmount;
         this.bio = bio;
         this.profilePicturePath = profilePicturePath;

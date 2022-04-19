@@ -21,10 +21,6 @@ public class UserDAO {
         return userRepository.findByUsername(username);
     }
 
-    public void registerNewUser(User user) {
-        userRepository.save(user);
-    }
-
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
@@ -41,11 +37,8 @@ public class UserDAO {
         userRepository.setNewBioByUserId(newBio, user.getId());
     }
 
-    public void followUser(User user) {
+    public void saveUserState(User user) {
         userRepository.save(user);
     }
 
-    public void unfollowUser(User user) {
-        userRepository.save(user);
-    }
 }

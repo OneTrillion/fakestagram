@@ -62,11 +62,20 @@ public class UsersController {
     public UserInfo getRelevantUserInfoByUsername(@PathVariable String username) {
         return userService.getRelevantUserInfoByUsername(username);
     }
+
+    @GetMapping("/current-user")
+    public UserInfo getRelevantUserInfo() {
+        return userService.getRelevantUserInfo();
+    }
+/*
 //TODO kanske ta bort?
+
     @GetMapping("/current-user")
     public String currentUsername(Authentication authentication) {
         return authentication.getName();
     }
+
+ */
 //TODO kanske ta bort
     @GetMapping("/cu")
     public User getCurrentUser() {
