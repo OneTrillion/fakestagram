@@ -22,17 +22,16 @@
     font-weight: lighter;
 }
 
-.follow-user{
+.edit-profile{
     border: 1px solid #D8D8D8;
     border-radius: 5px;
     font-size: 15px;
     padding: 5px;
     background-color: #FAFAFA;
-    width:100px;
 }
 
 .icon-settings{
-   display: none;
+    margin-left: 10px;
 }
 
 .status-cont{
@@ -77,8 +76,8 @@
     margin-left: 20px;
 }
 
-.user-post-cont {
+.user-post-cont{
     display: flex;
     margin-left: 320px;
-    width: 500px;
+    width:500px;
 }

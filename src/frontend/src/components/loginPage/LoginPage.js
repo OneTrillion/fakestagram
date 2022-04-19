@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import './LoginPage.css';
 import Grid from '@material-ui/core/Grid';
 import left_img from '../images/left_img.png';
@@ -9,13 +8,8 @@ import playstore from '../images/play.png';
 //mport SignIN from '../signIn/SignIN';
 //import SignUp from '../signUp/SignUp';
 
-class LoginPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
+function LoginPage (){
 
-    render() {
         return (
             <div className="login-page">
             <div className="container">
@@ -54,7 +48,6 @@ class LoginPage extends Component {
 
                 </div>
         );
-    }
 }
 
 export default LoginPage;

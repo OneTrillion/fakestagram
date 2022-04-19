@@ -1,20 +1,20 @@
 import Header from "../header/Header";
-import "./UserProfile.css";
+import "./SignedInUserProfile.css";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import SettingsIcon from '@mui/icons-material/Settings';
 import {useEffect, useState} from "react";
 import {getCurrentUserInfo} from "../../client";
 
 
-function UserProfile() {
+function SignedInUserProfile() {
 
-    const [user, setUser] = useState({});
-    const fetchCurrentUserInfo = () =>{
-        getCurrentUserInfo()
-            .then(res => res.json())
-            .then(data => setUser(data))
-            .catch(err => console.log(err))
-    }
+const [user, setUser] = useState({});
+const fetchCurrentUserInfo = () =>{
+    getCurrentUserInfo()
+        .then(res => res.json())
+        .then(data => setUser(data))
+        .catch(err => console.log(err))
+}
 
     useEffect(() => {
         fetchCurrentUserInfo()
@@ -31,11 +31,11 @@ function UserProfile() {
                 </div>
 
                 <div className="side-info-cont">
-                    <div className="profile-info-cont">
-                        <div className="profile-username">{user.username}</div>
-                        <button className="follow-user">Follow </button>
-                        <div className="icon-settings"><SettingsIcon/></div>
-                    </div>
+                <div className="profile-info-cont">
+                    <div className="profile-username">{user.username}</div>
+                    <button className="edit-profile">Edit profile </button>
+                    <div className="icon-settings"><SettingsIcon/></div>
+                </div>
 
                     <div className="status-cont">
                         <div className="post-count">3 Posts</div>
@@ -55,6 +55,7 @@ function UserProfile() {
 
             <div className="bottom-profile-cont">
                 POSTS:
+
                 <div className="user-post-cont">
 
                     <div className="post-box">
@@ -70,12 +71,12 @@ function UserProfile() {
                 </div>
 
 
-            </div>
+                </div>
 
-        </div>
+            </div>
 
     );
 
 }
 
-export default UserProfile;
+export default SignedInUserProfile;
