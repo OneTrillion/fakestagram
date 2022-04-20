@@ -90,3 +90,19 @@ export const deletePost = (id) =>
 export const likePost = (postId) =>
     fetch(`/api/v1/post/like/${postId}`)
         .then(checkStatus)
+
+export const makeComment = (comment,timestamp) =>
+    fetch("/api/v1/comment/submit-comment", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            comment: comment,
+            lieks: null,
+            postId: null,
+            timestamp: timestamp,
+
+        })
+    }).then(checkStatus);

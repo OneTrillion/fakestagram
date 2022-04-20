@@ -5,8 +5,11 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import SendIcon from "@mui/icons-material/Send";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import "./Comments.css"
+import {useState} from "react";
 
 function Comments() {
+
+    const [comment, setComment] = useState();
 
 
     return(

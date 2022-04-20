@@ -46,12 +46,12 @@ const fetchLikePost =()=>{
                     {/*Post description section*/}
                     <div className="post-description">
                         <div className="icons-cont">
-                            <div className="like-icon"><FavoriteBorderIcon />{fetchLikePost}</div>
+                            <div className="like-icon"><FavoriteBorderIcon onClick={fetchLikePost}/></div>
                             <div className="comment-icon"><a href=""><ChatBubbleOutlineIcon/></a></div>
                             <div className="share-icon"><a href=""><SendIcon/></a></div>
                             <div className="save-icon"><a href=""><BookmarkBorderIcon/></a></div>
                         </div>
-                        <div className="likes-amount"> asd</div>
+                        <div className="likes-amount">123 likes</div>
                         <div className="desc-cont">
                             <p className="user-n">{postInfo.username}</p>
                             <div className="desc-text">{postInfo.description}description text here
