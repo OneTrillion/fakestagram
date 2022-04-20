@@ -19,10 +19,6 @@ public class CommentService {
         return commentDAO.submitComment(comment);
     }
 
-    public void likeComment(){
-
-    }
-
     public Comment findCommentById(Long id) {
         return commentDAO.findCommentById(id).orElse(null);
     }
@@ -33,7 +29,6 @@ public class CommentService {
 
     public void deleteCommentById(Long id) {
         commentDAO.deleteCommentById(id);
-
     }
 
     public void updateCommentById(String newComment, Long id) {
