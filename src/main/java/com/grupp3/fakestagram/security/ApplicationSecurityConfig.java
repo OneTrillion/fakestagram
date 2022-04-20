@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @AllArgsConstructor
 @EnableWebSecurity
@@ -34,12 +35,19 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/index.html", true)
+                    //.loginPage("/login")
+                    //.permitAll()
+                    //.loginProcessingUrl("/login-prcs")
+                    .defaultSuccessUrl("/", true)
+                    //.passwordParameter("password")
+                    //.usernameParameter("username")
                 .and()
                 .logout()
-                .clearAuthentication(true)
-                .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID");
+                    //.logoutUrl("/logout")
+                    //.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
+                    .clearAuthentication(true)
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID");
     }
 
     @Override

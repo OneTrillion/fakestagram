@@ -3,11 +3,9 @@ package com.grupp3.fakestagram.service;
 import com.grupp3.fakestagram.dao.UserDAO;
 import com.grupp3.fakestagram.model.User;
 import com.grupp3.fakestagram.model.UserInfo;
-import com.grupp3.fakestagram.repository.UserRepository;
 import com.grupp3.fakestagram.security.AuthenticationFacade;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Getter

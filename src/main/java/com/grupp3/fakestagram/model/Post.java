@@ -32,11 +32,16 @@ public class Post {
     private String date;
     private String img;
 
-    public Post(Long userId, String description, List<Long> likedByUser, String date, String img) {
+    @JoinTable
+    @OneToMany
+    private List<Comment> comments;
+
+    public Post(Long userId, String description, List<Long> likedByUser, String date, String img, List<Comment> comments) {
         this.userId = userId;
         this.description = description;
         this.likedByUser = likedByUser;
         this.date = date;
         this.img = img;
+        this.comments = comments;
     }
 }

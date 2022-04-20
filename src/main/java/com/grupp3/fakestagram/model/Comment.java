@@ -20,15 +20,11 @@ public class Comment {
     @NotEmpty(message = "Comment cannot be empty.")
     private String comment;
     private Long userId;
-    private Long postId;
     private String timestamp;
-    private int likes;
 
-    public Comment(String comment, Long userId, Long postId, String timestamp, int likes) {
+    public Comment(String comment, Long userId, String timestamp) {
         this.comment = comment;
         this.userId = userId;
-        this.postId = postId;
         this.timestamp = timestamp;
-        this.likes = likes;
     }
 }
