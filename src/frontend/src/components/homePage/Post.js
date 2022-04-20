@@ -15,14 +15,16 @@ import Comments from "../comments/Comments";
 
 function Post({postInfo}) {
 
-    const [post, setPost] = useState({postInfo})
+    //const [post, setPost] = useState({postInfo})
 
 const fetchDeletePost =() =>{
-       // deletePost(postInfo.id)
+       deletePost(postInfo.id)
+           .catch(err => console.log(err))
 }
 
 const fetchLikePost =()=>{
-       // likePost(postInfo.id)
+       likePost(postInfo.id)
+           .catch(err => console.log(err))
 }
 
         return(
@@ -34,25 +36,25 @@ const fetchLikePost =()=>{
                     <div className="user-cont">
 
                         <div className="profile-img-cont"><AccountCircleRoundedIcon sx={{ fontSize: 50 }}/> </div>
-                        <p className="user-n">username</p>
+                        <p className="user-n">{postInfo.username}</p>
                         <div className="more"><button className="delete-post" onClick={fetchDeletePost}>Delete post</button></div>
                     </div>
                     <div className="post-img-cont">
-                        <img className="post-img" src=""/>
+                        <img className="post-img" src={`${postInfo.img}`}/>
                     </div>
 
                     {/*Post description section*/}
                     <div className="post-description">
                         <div className="icons-cont">
-                            <div className="like-icon"><FavoriteBorderIcon />{fetchLikePost()}</div>
+                            <div className="like-icon"><FavoriteBorderIcon />{fetchLikePost}</div>
                             <div className="comment-icon"><a href=""><ChatBubbleOutlineIcon/></a></div>
                             <div className="share-icon"><a href=""><SendIcon/></a></div>
                             <div className="save-icon"><a href=""><BookmarkBorderIcon/></a></div>
                         </div>
-                        <div className="likes-amount"> likes</div>
+                        <div className="likes-amount"> asd</div>
                         <div className="desc-cont">
-                            <p className="user-n"><a href="url">Username</a></p>
-                            <div className="desc-text">description text here
+                            <p className="user-n">{postInfo.username}</p>
+                            <div className="desc-text">{postInfo.description}description text here
                             </div>
                         </div>
                         <Comments/>

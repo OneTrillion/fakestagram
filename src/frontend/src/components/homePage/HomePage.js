@@ -11,6 +11,14 @@ function HomePage(){
 
   const [posts, setPosts] = useState([{}]);
 
+  const mapPosts = posts.map((info) => {
+      return(
+          <>
+              <Post postInfo={info}/>
+          </>
+      )
+  })
+
   const fetchAllPosts = () => {
       getAllPosts()
             .then(res => res.json())
@@ -25,14 +33,14 @@ function HomePage(){
     }, []);
 
 
+
+//{posts.map((t) =>
+//                 posts[t].map((e) => <div key={e.id}><Post postInfo={e}/></div>))}
     return(
         <div className="HomePage">
         <Header/>
             <UserStories/>
-            {posts.map((post) => <div key={post.id}><Post postInfo={post}/></div>)}
-            <Post/>
-            <Post/>
-            <Post/>
+            {mapPosts}
 
             <div className="side-cont">
                 <p className="suggestions-title">Suggestions for you</p>
