@@ -45,7 +45,7 @@ public class PostsController {
        postService.deletePostById(id);
     }
 
-    @PutMapping(value = "update/{id}", produces = "application/json") //fixa; ( får en 403??)
+    @PutMapping(value = "/update/{id}", produces = "application/json") //funkar
     public void updatePostDescById(@RequestBody String newPostDesc,@PathVariable Long id){
       postService.updatePostById(newPostDesc, id);
 

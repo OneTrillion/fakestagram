@@ -27,7 +27,7 @@ const fetchCurrentUserInfo = () =>{
         <div className="user-profile">
             <Header/>
             <div className="top-profile-cont">
-                <div className="top-profile-img"> <AccountCircleRoundedIcon sx={{ fontSize: 150 }}/>
+                <div className="top-profile-img"> <AccountCircleRoundedIcon/>
                 </div>
 
                 <div className="side-info-cont">

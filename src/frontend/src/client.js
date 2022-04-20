@@ -50,3 +50,22 @@ export const getUserInfoByUsername = (username) =>
     fetch(`api/v1/users/user-info/${username}`)
         .then(checkStatus)
 
+
+export const getPostsByUserId = (id) =>
+    fetch(`/user-posts/${id}`)
+        .then(checkStatus)
+
+
+export const updatePost = (newDesc, id) =>
+    fetch(`/api/v1/post/update/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            userId: id,
+            description: newDesc,
+
+        })
+    }).then(checkStatus);
