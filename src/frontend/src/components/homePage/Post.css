@@ -105,28 +105,29 @@ img.post-img{
     margin-top:13px;
 
 }
-.comment-cont{
-    display: flex;
-    padding-left: 10px;
-    padding-top:10px;
-    margin-bottom: 10px;
-
-}
-
-.smiley-icon{
-    margin-right: 10px;
-}
-
-.comment > input {
-    font-size: 14px;
-    border: none;
-    outline: none;
-    width: 200px;
-    background-color:#ffffff;
-}
 
 .feed{
     display: flex;
 }
+
+.delete-post{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    margin-left: -60px;
+    background-color: #FAFAFA;
+}
+
+.delete-post:hover{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    color: #0c63e4;
+    margin-left: -60px;
+    background-color: #FAFAFA;
+}
+
 
 

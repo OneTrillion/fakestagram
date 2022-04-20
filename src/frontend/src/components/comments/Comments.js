@@ -4,6 +4,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import SendIcon from "@mui/icons-material/Send";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import "./Comments.css"
 
 function Comments() {
 
@@ -21,7 +22,7 @@ function Comments() {
             <div className="comment-cont">
                 <div className="smiley-icon"><SentimentSatisfiedAltIcon sx={{fontSize: 28}}/></div>
                 <div className="comment"><input type="text" placeholder="Add a commment..."></input></div>
-                <p className="post-comment"><a href="">Post</a></p>
+                <button className="post-comment">Post comment</button>
             </div>
         </div>
     );

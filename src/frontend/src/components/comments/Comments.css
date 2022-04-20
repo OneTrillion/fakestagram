@@ -1,6 +1,7 @@
 .comments{
     display: block;
 }
+
 .comment-cont{
     display: flex;
     padding-left: 10px;
@@ -21,21 +22,30 @@
     background-color:#ffffff;
 }
 
-.feed{
-    display: flex;
-}
-
-
-.post-comment{
-    margin-left: 300px;
-}
-
 .posted-comments-cont{
     display: flex;
 }
 
 .comment-posted{
-    margin-top:11px;
-    font-size: 15px;
+    font-size: 13px;
+    margin-top:13px;
     margin-left: 10px;
+}
+.post-comment{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    margin-left: 300px;
+    background-color: #FAFAFA;
+}
+
+.post-comment:hover{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    color: #0c63e4;
+    margin-left: 300px;
+    background-color: #FAFAFA;
 }
