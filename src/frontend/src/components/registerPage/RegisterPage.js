@@ -1,7 +1,7 @@
 import './RegisterPage.css';
-import Grid from '@material-ui/core/Grid';
+//import Grid from '@material-ui/core/Grid';
 import left_img from '../images/left_img.png';
-import insta_logo from '../images/logoinsta.png';
+//import insta_logo from '../images/logoinsta.png';
 import fb from '../images/fb.png';
 import appstore from '../images/app.png';
 import playstore from '../images/play.png';

@@ -10,7 +10,7 @@ import PermIdentityRoundedIcon from '@mui/icons-material/PermIdentityRounded';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SettingsIcon from '@mui/icons-material/Settings';
 import "./Nav.css";
-import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Nav() {
 
@@ -21,22 +21,30 @@ function Nav() {
 
                     <div className="dropdown-icons-cont">
 
-                        <div className="home-icon"><a href="url"><HomeIcon/></a></div>
-                        <div className="send-icon"> <a href="url"><SendIcon/></a></div>
-                        <div className="add-box-icon"><a href="url"><AddBoxIcon/></a></div>
-                        <div className="explore-icon"><a href="url"><ExploreIcon/></a></div>
-                        <div className="favorite-border-icon"><a href="url"><FavoriteBorderIcon/></a></div>
+                        <div className="home-icon"><Link to="/"><HomeIcon/></Link></div>
+                        <div className="send-icon"> <Link to="/"><SendIcon/></Link></div>
+                        <div className="add-box-icon"><Link to="/"><AddBoxIcon/></Link></div>
+                        <div className="explore-icon"><Link to="/"><ExploreIcon/></Link></div>
+                        <div className="favorite-border-icon"><Link to="/"><FavoriteBorderIcon/></Link></div>
 
                     <Dropdown.Toggle id="example1" variant="">
                         <AccountCircleRoundedIcon/>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu variant="">
-                        <Dropdown.Item href="#/action-2"><PermIdentityRoundedIcon/> Profile</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3"><BookmarkBorderIcon/> Saved</Dropdown.Item>
-                        <Dropdown.Item href="#/action-4"><SettingsIcon/> Settings</Dropdown.Item>
+                        <Dropdown.Item>
+                            <Link to={"/my-page"}> <PermIdentityRoundedIcon/> Profile </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <Link to={"/"}> <BookmarkBorderIcon/> Saved </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <Link to={"/"}> <SettingsIcon/> Settings </Link>
+                        </Dropdown.Item>
                         <Dropdown.Divider />
-                        <Dropdown.Item href="#/action-4">Log Out</Dropdown.Item>
+                        <Dropdown.Item>
+                            <Link to={"/logout"}> Log Out</Link>
+                        </Dropdown.Item>
                     </Dropdown.Menu>
                     </div>
                 </Dropdown>
