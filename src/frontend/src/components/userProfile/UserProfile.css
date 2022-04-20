@@ -22,7 +22,7 @@
     font-weight: lighter;
 }
 
-.edit-profile{
+.follow-user{
     border: 1px solid #D8D8D8;
     border-radius: 5px;
     font-size: 15px;
@@ -30,15 +30,17 @@
     background-color: #FAFAFA;
 }
 
-.icon-settings{
-    margin-left: 10px;
-}
 
 .status-cont{
     display: flex;
     margin-right: 100px;
     margin-left: 100px;
     margin-bottom: 20px;
+}
+
+.bio-text{
+    text-align: left;
+    margin-left: 100px;
 }
 .post-count{
     margin-right: 35px;
@@ -80,4 +82,8 @@
     display: flex;
     margin-left: 320px;
     width:500px;
+}
+
+.us-name{
+    margin-right: 30px;
 }

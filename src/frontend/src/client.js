@@ -52,7 +52,7 @@ export const getUserInfoByUsername = (username) =>
 
 
 export const getPostsByUserId = (id) =>
-    fetch(`/user-posts/${id}`)
+    fetch(`/api/v1/post/user-posts/${id}`)
         .then(checkStatus)
 
 
