@@ -15,7 +15,7 @@ import Comments from "../comments/Comments";
 
 function Post({postInfo}) {
 
-    //const [post, setPost] = useState({postInfo})
+    const [user, setUser] = useState({})
 
 const fetchDeletePost =() =>{
        deletePost(postInfo.id)
@@ -55,7 +55,7 @@ const calcLength = (obj) => {
                 <div className="post">
                     <div className="user-cont">
 
-                        <div className="profile-img-cont"><AccountCircleRoundedIcon sx={{ fontSize: 50 }}/> </div>
+                        <div className="profile-img-cont"><img className="profile-pic-img" src={`${user.profilePicturePath}`}width="50" height="50"/>/> </div>
                         <p className="user-n">{postInfo.username}</p>
                         <div className="more"><button className="delete-post" onClick={fetchDeletePost}>Delete post</button></div>
                     </div>
@@ -74,7 +74,7 @@ const calcLength = (obj) => {
                         <div className="likes-amount">{calcLength(postInfo.likedByUser)} likes</div>
                         <div className="desc-cont">
                             <p className="user-n">{postInfo.username}</p>
-                            <div className="desc-text">{postInfo.description}description text here
+                            <div className="desc-text">{postInfo.description}
                             </div>
                         </div>
                         <Comments/>
