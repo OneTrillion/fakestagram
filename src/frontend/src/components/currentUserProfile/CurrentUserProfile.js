@@ -42,7 +42,10 @@ function CurrentUserProfile({userInfo}) {
         fetchPostsByUserId()
     }, []);
 
-
+    const calcLength = (obj) => {
+        if (obj === null || obj === undefined || obj.length === 0) return 0;
+        return Object.keys(obj).length;
+    }
 
 
     return(
@@ -61,8 +64,8 @@ function CurrentUserProfile({userInfo}) {
 
                     <div className="status-cont">
                         <div className="post-count">{posts.length} posts</div>
-                        <div className="followers-count">{currentUser.followerIds} followers</div>
-                        <div className="following-count"> {currentUser.followingIds} following</div>
+                        <div className="followers-count">{calcLength(currentUser.followerIds)} followers</div>
+                        <div className="following-count"> {calcLength(currentUser.followingIds)} following</div>
 
                     </div>
 

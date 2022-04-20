@@ -14,7 +14,7 @@ const [user, setUser] = useState({});
 const [posts, setPosts] = useState([{}])
 
 const fetchGetUserInfoByUsername = () =>{
-    getUserInfoByUsername("LoveIsLife")
+    getUserInfoByUsername("admin")
         .then(res => res.json())
         .then(data => setUser(data))
         .catch(err => console.log(err))
@@ -49,7 +49,7 @@ const fetchGetUserInfoByUsername = () =>{
         <div className="user-profile">
             <Header/>
             <div className="top-profile-cont">
-                <div className="top-profile-img"> <img className="profile-pic-img" src={`${user.profilePicturePath}`}width="150" height="150"/>
+                <div className="top-profile-img"> <img className="profile-pic-img" src={`${user.profilePicturePath}`} width="150" height="150"/>
                 </div>
                 <div className="side-info-cont">
                 <div className="profile-info-cont">
@@ -59,8 +59,8 @@ const fetchGetUserInfoByUsername = () =>{
 
                     <div className="status-cont">
                         <div className="post-count">{post.length} Posts</div>
-                        <div className="followers-count">{calcLength(user.followerIds)} followers</div>
-                        <div className="following-count">{user.followingIds} following</div>
+                        <div className="followers-count">{calcLength(user.followerIds)}followers</div>
+                        <div className="following-count">{calcLength(user.followingIds)} following</div>
 
                     </div>
 
