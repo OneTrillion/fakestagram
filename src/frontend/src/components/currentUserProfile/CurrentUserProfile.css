@@ -2,6 +2,7 @@
     display: flex;
     width:900px;
     margin-left: 340px;
+    margin-bottom: 70px;
 }
 .profile-info-cont{
     align-items: center;
@@ -9,29 +10,38 @@
     margin-top: 30px;
     height:60px;
     margin-left: 100px;
+    border-radius: 100px;
 }
 
 .top-profile-img{
-    margin-left: 40px;
+    margin-left: 60px;
+    margin-top:60px;
+    object-fit: cover;
 
 }
 
+img.profile-pic-img{
+    border-radius: 100px;
+    object-fit: cover;
+    border: 1px solid #000000;
+}
 .profile-username{
     margin-right: 20px;
     font-size: 27px;
     font-weight: lighter;
 }
 
-.edit-profile{
+.follow-user{
     border: 1px solid #D8D8D8;
     border-radius: 5px;
     font-size: 15px;
     padding: 5px;
     background-color: #FAFAFA;
+    width:100px;
 }
 
 .icon-settings{
-    margin-left: 10px;
+   display: none;
 }
 
 .status-cont{
@@ -55,8 +65,13 @@
     width:300px;
     margin-left: 100px;
     border-bottom: 1px solid #D8D8D8;
+    display: flex;
 }
 
+.bio-text{
+    text-align: left;
+    margin-left: 100px;
+}
 .side-info-cont{
     display: block;
     align-items: center;
@@ -73,11 +88,29 @@
 
 .post-box{
     margin-top:20px;
-    margin-left: 20px;
+    margin-left:-400px;
+    display: flex;
 }
 
-.user-post-cont{
+.user-post-cont {
     display: flex;
-    margin-left: 320px;
-    width:500px;
+    margin-left: 355px;
+    width: 500px;
+}
+
+.ind-name{
+    margin-right: 30px;
+}
+
+.bottom-profile-cont{
+    border-top: 1px solid #D8D8D8;
+    width: 700px;
+    align-items: center;
+    margin-left: 400px;
+}
+
+img.posts-frame{
+    border: 1px solid #D8D8D8;
+    margin-right: 20px;
+    padding: 5px;
 }
