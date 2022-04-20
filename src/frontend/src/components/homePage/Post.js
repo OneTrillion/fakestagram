@@ -9,9 +9,30 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SideSuggestions from "./SideSuggestions";
-import {Component} from "react";
+import {Component, useEffect, useState} from "react";
+import {getPostsByUserId} from "../../client";
 
-function Post() {
+function Post({postInfo }) {
+
+    /*{`${postInfo.img}`}*/
+
+    const [posts, setPosts] = useState([{}])
+
+    const fetchPostsByUserId =() =>{
+        getPostsByUserId(1)
+            .then(res => res.json())
+            .then(data => {
+                setPosts(data)
+                console.log(data)
+            })
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        fetchPostsByUserId()
+    }, []);
+
+
         return(
         <div className="feed">
 
@@ -20,12 +41,11 @@ function Post() {
                 <div className="post">
                     <div className="user-cont">
                         <div className="profile-img-cont"><AccountCircleRoundedIcon sx={{ fontSize: 50 }}/> </div>
-                        <p className="user-n">Username</p>
+                        <p className="user-n">username</p>
                         <div className="more"><a href="url"><MoreVertIcon/></a></div>
                     </div>
                     <div className="post-img-cont">
-                        <img className="post-img"
-                             src="https://i.pinimg.com/564x/30/c0/e6/30c0e6be1be0d6635b82370359b2e7cb.jpg"/>
+                        <img className="post-img" src="https://i.pinimg.com/564x/c1/5c/2b/c15c2b230e28d0bfae462cc738be7a83.jpg"/>
                     </div>
 
                     {/*Post description section*/}

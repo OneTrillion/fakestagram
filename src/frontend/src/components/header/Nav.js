@@ -22,8 +22,8 @@ function Nav() {
                     <div className="dropdown-icons-cont">
 
                         <div className="home-icon"><Link to="/"><HomeIcon/></Link></div>
-                        <div className="send-icon"> <Link to="/"><SendIcon/></Link></div>
-                        <div className="add-box-icon"><Link to="/"><AddBoxIcon/></Link></div>
+                        <div className="send-icon"> <Link to="/friend-page"><SendIcon/></Link></div>
+                        <div className="add-box-icon"><Link to="/post-page"><AddBoxIcon/></Link></div>
                         <div className="explore-icon"><Link to="/"><ExploreIcon/></Link></div>
                         <div className="favorite-border-icon"><Link to="/"><FavoriteBorderIcon/></Link></div>
 
@@ -39,7 +39,7 @@ function Nav() {
                             <Link to={"/"}> <BookmarkBorderIcon/> Saved </Link>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            <Link to={"/"}> <SettingsIcon/> Settings </Link>
+                            <Link to={"/my-page"}> <SettingsIcon/> Settings </Link>
                         </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item>
