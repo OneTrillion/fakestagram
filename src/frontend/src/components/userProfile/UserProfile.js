@@ -34,6 +34,11 @@ const fetchGetUserInfoByUsername = () =>{
             .catch(err => console.log(err))
     }
 
+    const calcLength = (obj) => {
+        if (obj === null || obj === undefined || obj.length === 0) return 0;
+        return Object.keys(obj).length;
+    }
+
     useEffect(() => {
         fetchPostsByUserId()
     }, []);
@@ -54,7 +59,7 @@ const fetchGetUserInfoByUsername = () =>{
 
                     <div className="status-cont">
                         <div className="post-count">{post.length} Posts</div>
-                        <div className="followers-count">{user.followerIds} followers</div>
+                        <div className="followers-count">{calcLength(user.followerIds)} followers</div>
                         <div className="following-count">{user.followingIds} following</div>
 
                     </div>

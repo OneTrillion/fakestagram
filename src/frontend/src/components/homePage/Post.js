@@ -10,7 +10,7 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SideSuggestions from "./SideSuggestions";
 import {Component, useEffect, useState} from "react";
-import {deletePost, likePost} from "../../client";
+import {deletePost, getUserByUserId, likePost} from "../../client";
 import Comments from "../comments/Comments";
 
 function Post({postInfo}) {
@@ -26,6 +26,20 @@ const fetchLikePost =()=>{
        likePost(postInfo.id)
            .catch(err => console.log(err))
 }
+
+
+    const fetchUserByUserId = ()=>{
+        getUserByUserId(postInfo.userId)
+            .then(res => res.json())
+            .then(data => setUser(data))
+            .catch(err => console.log(err))
+
+    }
+
+    useEffect(() => {
+        console.log(postInfo.userId)
+        fetchUserByUserId()
+    }, [postInfo]);
 
 
 const calcLength = (obj) => {
