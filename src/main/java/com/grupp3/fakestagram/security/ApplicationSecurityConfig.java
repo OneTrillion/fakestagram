@@ -27,20 +27,21 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/images/*").permitAll()
                 .antMatchers(
-                        HttpMethod.OPTIONS,
+                        HttpMethod.GET,
                         "/index*", "/static/**", "/*.js", "/*.json", "/*.ico")
                 .permitAll()
                 //.antMatchers("/**").permitAll() //TODO ta bort när vi är klara (gör så att man inte behöver logga in)
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                    //.loginPage("/login")
-                    //.permitAll()
-                    //.loginProcessingUrl("/login-prcs")
+                    .loginPage("/auth/login")
+                    .permitAll()
+                    //.loginProcessingUrl("/loginpage")
                     .defaultSuccessUrl("/", true)
-                    //.passwordParameter("password")
-                    //.usernameParameter("username")
+                    .passwordParameter("password")
+                    .usernameParameter("username")
                 .and()
                 .logout()
                     //.logoutUrl("/logout")

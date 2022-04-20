@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/billabong');
+
+        .container{
+            display: flex;
+            /*  border:2px solid;
+             */
+            width:900px;
+            padding:20px;
+            margin-right: 300px;
+        }
+
+        .right-box{
+            height:380px;
+            width:350px;
+            background-color: #ffffff;
+            border: 1px solid #D8D8D8;
+            margin-top:40px;
+            margin-left: 20px;
+        }
+
+        h1{
+            text-align: center;
+            padding-top: 20px;
+            font-family: 'Billabong', sans-serif;
+            font-size: 50px;
+        }
+
+        img.leftside-img{
+            margin-top:-4px;
+            height:630px;
+        }
+
+        .signIn-section{
+            display: block;
+            text-align: center;
+        }
+        input.input{
+            border: 1px solid #D8D8D8;
+            padding:5px;
+            margin: 5px;
+            width:258px;
+            height:36px;
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+
+        .signIn-button{
+            margin-top: 4px;
+            width:258px;
+            height:36px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 1px solid #0395F6;
+            background-color: #0395F6;
+            color: white;
+        }
+
+        .login-or-section{
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        hr.divide{
+            width:100px;
+            height: 0px;
+            border:1px solid #D8D8D8;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .login-fb {
+            color: #395185;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        .forgot-password{
+            color: #000000;
+            font-size: 12px;
+            line-height: 14px;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .signup-cont{
+            justify-content: center;
+            border:1px solid #D8D8D8;
+            width:350px;
+            margin-top: 50px;
+            padding: 15px;
+            font-size: 13px;
+            background-color: #ffffff;
+
+        }
+
+        .download-section{
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .loginPage-option{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-page">
+    <div class="container">
+        <div class="left-img">
+            <img class="leftside-img" th:src="@{/images/left_img.png}" alt="asd" />
+        </div>
+        <div class="right-box">
+            <h1>Fakestagram</h1>
+            <form method="post" action="/auth/login">
+                <div class="signIn-section">
+                    <p>
+                        <label for="username">Username</label>
+                        <input class="input" id="username" name="username" type="text" placeholder="Email, Username"
+                        required="" autofocus=""/>
+                    </p>
+                    <p>
+
+                        <label for="password">Password</label>
+                        <input class="input" id="password" name="password" type="password" placeholder="Password"
+                        required=""/>
+                    </p>
+                </div>
+                <button class="signIn-button">Log In</button>
+            </form>
+            <div class="login-or-section">
+                <hr class="divide"></hr>
+                <div>OR</div>
+                <hr class="divide"></hr>
+            </div>
+            <div class="login-fb">
+                <img th:src="@{/images/fb.png}" width="15px" style="margin-right:5px"/>
+                Log in with Facebook
+            </div>
+            <div class="forgot-password">Forgot password?</div>
+
+            <div class="signup-cont">
+                <div class="no-account">Don't have an account?
+                    <span style="font-weight:bold; color: #0395F6">Sign up</span>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <div>
+                    Get the app.
+                </div>
+                <div class="loginPage-option">
+                    <img class="loginPage_dwimg" th:src="@{/images/app.png}" width="136px" />
+                    <img class="loginPage_dwimg" th:src="@{/images/play.png}" width="136px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
