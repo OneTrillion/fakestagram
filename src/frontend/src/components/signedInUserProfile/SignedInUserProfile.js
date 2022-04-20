@@ -1,5 +1,5 @@
 import Header from "../header/Header";
-import "./SignedInUserProfile.css";
+//import "./SignedInUserProfile.css";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import SettingsIcon from '@mui/icons-material/Settings';
 import {useEffect, useState} from "react";

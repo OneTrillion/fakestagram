@@ -15,11 +15,6 @@ function App() {
       <Router>
           <div className="App">
               <Routes>
-                  <Route path={"/login"} element={
-                      <>
-                          <LoginPage />
-                      </>
-                  }/>
                   <Route path={"/register"} element={
                       <>
                           <RegisterPage />
