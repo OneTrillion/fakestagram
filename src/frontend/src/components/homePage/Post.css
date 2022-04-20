@@ -129,5 +129,12 @@ img.post-img{
     background-color: #FAFAFA;
 }
 
+.user-prof-img{
+    border-radius: 100%;
+    margin-bottom:5px;
+    object-fit: cover;
+}
+
+
 
 

@@ -129,4 +129,8 @@ public class UserService implements UserDetailsService {
 
     }
 
+    public UserInfo getUserById(Long id) {
+        User user = userDAO.findUserById(id).orElseThrow(()->new IllegalStateException("no user found"));
+        return setRelevantUserInfo(user);
+    }
 }

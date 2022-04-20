@@ -63,6 +63,11 @@ public class UsersController {
         return userService.getRelevantUserInfoByUsername(username);
     }
 
+    @GetMapping("/find-user-by/{id}")
+    public UserInfo getInfoByUserId(@PathVariable Long id) {
+        return userService.getUserById(id);
+    }
+
     @GetMapping("/current-user")
     public UserInfo getRelevantUserInfo() {
         return userService.getRelevantUserInfo();
@@ -76,9 +81,5 @@ public class UsersController {
     }
 
  */
-//TODO kanske ta bort
-    @GetMapping("/cu")
-    public User getCurrentUser() {
-        return userService.getCurrentUser();
-    }
+
 }
