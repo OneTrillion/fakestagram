@@ -95,8 +95,25 @@ export const deletePost = (id) =>
         .then(checkStatus)
 
 export const likePost = (postId) =>
-    fetch(`/api/v1/post/like/${postId}`)
+    fetch(`/api/v1/post/like/${postId}`,{
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+})
         .then(checkStatus)
+
+export const unlikePost = (postId) =>
+    fetch(`/api/v1/post/unlike/${postId}`,{
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(checkStatus)
+
 
 export const makeComment = (comment,timestamp,userId ) =>
     fetch("/api/v1/comment/submit-comment", {

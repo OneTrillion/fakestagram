@@ -10,12 +10,15 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SideSuggestions from "./SideSuggestions";
 import {Component, useEffect, useState} from "react";
-import {deletePost, getUserByUserId, likePost} from "../../client";
+import {deletePost, getUserByUserId, likePost, unlikePost} from "../../client";
 import Comments from "../comments/Comments";
 
 function Post({postInfo}) {
 
     const [user, setUser] = useState({})
+    const [like, setLike] = useState(true)
+
+
 
 const fetchDeletePost =() =>{
        deletePost(postInfo.id)
@@ -25,6 +28,18 @@ const fetchDeletePost =() =>{
 const fetchLikePost =()=>{
        likePost(postInfo.id)
            .catch(err => console.log(err))
+           setLike(false)
+}
+
+const fetchUnlikePost =()=>{
+        unlikePost(postInfo.id)
+            .catch(err => console.log(err))
+    setLike(true)
+}
+
+const likeToggle =()=>{
+        if(like) fetchLikePost()
+    else fetchUnlikePost()
 }
 
 
@@ -57,7 +72,7 @@ const calcLength = (obj) => {
 
                         <div className="profile-img-cont"><img className="user-prof-img" src={`${user.profilePicturePath}`}width="50" height="50"/> </div>
                         <p className="user-n">{user.username}</p>
-                        <div className="more"><button className="delete-post" onClick={fetchDeletePost}>Delete post</button></div>
+                        <div className="more"><button className="delete-post" onClick={likeToggle}>Delete post</button></div>
                     </div>
                     <div className="post-img-cont">
                         <img className="post-img" src={`${postInfo.img}`}/>
