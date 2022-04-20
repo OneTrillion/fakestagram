@@ -27,6 +27,12 @@ const fetchLikePost =()=>{
            .catch(err => console.log(err))
 }
 
+
+const calcLength = (obj) => {
+    if (obj === null || obj === undefined || obj.length === 0) return 0;
+    return Object.keys(obj).length;
+}
+
         return(
         <div className="feed">
 
@@ -51,7 +57,7 @@ const fetchLikePost =()=>{
                             <div className="share-icon"><a href=""><SendIcon/></a></div>
                             <div className="save-icon"><a href=""><BookmarkBorderIcon/></a></div>
                         </div>
-                        <div className="likes-amount">123 likes</div>
+                        <div className="likes-amount">{calcLength(postInfo.likedByUser)} likes</div>
                         <div className="desc-cont">
                             <p className="user-n">{postInfo.username}</p>
                             <div className="desc-text">{postInfo.description}description text here
