@@ -1,0 +1,41 @@
+.comments{
+    display: block;
+}
+.comment-cont{
+    display: flex;
+    padding-left: 10px;
+    padding-top:10px;
+    margin-bottom: 10px;
+
+}
+
+.smiley-icon{
+    margin-right: 10px;
+}
+
+.comment > input {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    width: 200px;
+    background-color:#ffffff;
+}
+
+.feed{
+    display: flex;
+}
+
+
+.post-comment{
+    margin-left: 300px;
+}
+
+.posted-comments-cont{
+    display: flex;
+}
+
+.comment-posted{
+    margin-top:11px;
+    font-size: 15px;
+    margin-left: 10px;
+}

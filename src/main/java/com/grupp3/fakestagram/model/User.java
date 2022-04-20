@@ -25,14 +25,11 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotEmpty(message = "name is mandatory")
+  @NotEmpty(message = "name is mandatory")
     private String name;
 
     @NotNull(message = "age is mandatory")
     private Integer age;
-
-    @NotNull(message = "posts is mandatory")
-    private Integer postsAmount;
 
     @NotEmpty(message = "bio is mandatory")
     private String bio;
@@ -70,10 +67,9 @@ public class User implements UserDetails {
 //TODO fixa detta
 
 
-    public User(String name, Integer age, Integer postsAmount, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
+    public User(String name, Integer age, String bio, String profilePicturePath, List<Long> followerIds, List<Long> followingIds, String username, String password, Set<? extends GrantedAuthority> grantedAuthorities, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
         this.name = name;
         this.age = age;
-        this.postsAmount = postsAmount;
         this.bio = bio;
         this.profilePicturePath = profilePicturePath;
         this.followerIds = followerIds;

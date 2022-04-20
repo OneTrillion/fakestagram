@@ -39,7 +39,7 @@ function Nav() {
                             <Link to={"/"}> <BookmarkBorderIcon/> Saved </Link>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            <Link to={"/my-page"}> <SettingsIcon/> Settings </Link>
+                            <Link to={"/edit-bio"}> <SettingsIcon/> Settings</Link>
                         </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item>

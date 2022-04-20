@@ -6,6 +6,7 @@ import RegisterPage from "./components/registerPage/RegisterPage";
 import UserProfile from "./components/userProfile/UserProfile";
 import PostPage from "./components/postPage/PostPage";
 import CurrentUserProfile from "./components/currentUserProfile/CurrentUserProfile";
+import EditProfile from "./components/editProfile/EditProfile";
 
 function App() {
 
@@ -38,6 +39,13 @@ function App() {
                   <Route path={"/post-page"} element={
                       <>
                           <PostPage />
+                      </>
+
+                  }/>
+
+                  <Route path={"/edit-bio"} element={
+                      <>
+                          <EditProfile />
                       </>
                   }/>
               </Routes>

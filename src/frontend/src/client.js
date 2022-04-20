@@ -71,7 +71,7 @@ export const updatePost = (newDesc, id) =>
     }).then(checkStatus);
 
 export const updateBio = (newBio) =>
-    fetch("/api/v1/user/change-bio", {
+    fetch("/api/v1/users/change-bio", {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
@@ -82,3 +82,11 @@ export const updateBio = (newBio) =>
 
         })
     }).then(checkStatus);
+
+export const deletePost = (id) =>
+    fetch(`/api/v1/post/delete/${id}`)
+        .then(checkStatus)
+
+export const likePost = (postId) =>
+    fetch(`/api/v1/post/like/${postId}`)
+        .then(checkStatus)

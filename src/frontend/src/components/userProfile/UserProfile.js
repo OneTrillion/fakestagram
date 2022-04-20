@@ -11,7 +11,7 @@ import post from "../homePage/Post";
 function UserProfile({postInfo, userInfo}) {
 
 const [user, setUser] = useState({});
-    const [posts, setPosts] = useState([{}])
+const [posts, setPosts] = useState([{}])
 
 const fetchGetUserInfoByUsername = () =>{
     getUserInfoByUsername("LoveIsLife")

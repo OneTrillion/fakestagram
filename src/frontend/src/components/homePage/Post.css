@@ -130,16 +130,3 @@ img.post-img{
 }
 
 
-.post-comment{
-    margin-left: 300px;
-}
-
-.posted-comments{
-    display: flex;
-}
-
-.comment-posted{
-    margin-top:11px;
-    font-size: 15px;
-    margin-left: 10px;
-}

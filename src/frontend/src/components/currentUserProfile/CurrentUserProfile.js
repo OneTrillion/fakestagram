@@ -5,7 +5,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import {useEffect, useState} from "react";
 import {getCurrentUserInfo, getPostsByUserId} from "../../client";
 import Post from "../homePage/Post";
-
+import {Link} from "react-router-dom";
 
 function CurrentUserProfile({userInfo}) {
 
@@ -55,7 +55,7 @@ function CurrentUserProfile({userInfo}) {
                 <div className="side-info-cont">
                     <div className="profile-info-cont">
                         <div className="profile-username">{currentUser.username}</div>
-                        <button className="edit-profile">Edit profile</button>
+                        <button className="edit-profile"> <Link to={"/edit-bio"}>Edit profile</Link></button>
                         <div className="icon-settings"><SettingsIcon/></div>
                     </div>
 

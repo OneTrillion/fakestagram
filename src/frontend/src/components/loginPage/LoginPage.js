@@ -10,6 +10,8 @@ import playstore from '../images/play.png';
 
 function LoginPage (){
 
+
+
         return (
             <div className="login-page">
             <div className="container">
