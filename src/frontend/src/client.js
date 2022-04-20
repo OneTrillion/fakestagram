@@ -84,7 +84,14 @@ export const updateBio = (newBio) =>
     }).then(checkStatus);
 
 export const deletePost = (id) =>
-    fetch(`/api/v1/post/delete/${id}`)
+    fetch(`/api/v1/post/delete/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+
         .then(checkStatus)
 
 export const likePost = (postId) =>
