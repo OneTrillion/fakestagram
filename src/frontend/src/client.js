@@ -69,3 +69,16 @@ export const updatePost = (newDesc, id) =>
 
         })
     }).then(checkStatus);
+
+export const updateBio = (newBio) =>
+    fetch("/api/v1/user/change-bio", {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            description: newBio,
+
+        })
+    }).then(checkStatus);

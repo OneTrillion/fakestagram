@@ -7,7 +7,7 @@ import {getCurrentUserInfo, getPostsByUserId} from "../../client";
 import Post from "../homePage/Post";
 
 
-function CurrentUserProfile() {
+function CurrentUserProfile({userInfo}) {
 
     const [currentUser, setCurrentUser] = useState({});
     const [posts, setPosts] = useState([{}])

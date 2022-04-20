@@ -71,6 +71,7 @@ img.profile-pic-img{
 .bio-text{
     text-align: left;
     margin-left: 100px;
+    margin-top: 10px;
 }
 .side-info-cont{
     display: block;

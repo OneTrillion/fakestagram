@@ -3,14 +3,15 @@ import "./UserProfile.css";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import SettingsIcon from '@mui/icons-material/Settings';
 import {useEffect, useState} from "react";
-import {getCurrentUserInfo, getUserInfoByUsername} from "../../client";
+import {getCurrentUserInfo, getPostsByUserId, getUserInfoByUsername} from "../../client";
 import Post from "../homePage/Post";
 import post from "../homePage/Post";
 
 
-function UserProfile() {
+function UserProfile({postInfo, userInfo}) {
 
 const [user, setUser] = useState({});
+    const [posts, setPosts] = useState([{}])
 
 const fetchGetUserInfoByUsername = () =>{
     getUserInfoByUsername("LoveIsLife")
@@ -23,6 +24,19 @@ const fetchGetUserInfoByUsername = () =>{
         fetchGetUserInfoByUsername()
     }, []);
 
+    const fetchPostsByUserId =() =>{
+        getPostsByUserId(2)
+            .then(res => res.json())
+            .then(data => {
+                setPosts(data)
+                console.log(data)
+            })
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        fetchPostsByUserId()
+    }, []);
 
 
 
@@ -60,8 +74,7 @@ const fetchGetUserInfoByUsername = () =>{
                 <div className="user-post-cont">
 
                     <div className="post-box">
-
-
+                        {posts.map((post) => <div key={post.id}><Post postInfo={post}/></div>)}
 
                     </div>
 

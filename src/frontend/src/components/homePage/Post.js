@@ -10,27 +10,10 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SideSuggestions from "./SideSuggestions";
 import {Component, useEffect, useState} from "react";
-import {getPostsByUserId} from "../../client";
+import {getAllPosts} from "../../client";
 
-function Post({postInfo }) {
+function Post({postInfo}) {
 
-    /*{`${postInfo.img}`}*/
-
-    const [posts, setPosts] = useState([{}])
-
-    const fetchPostsByUserId =() =>{
-        getPostsByUserId(1)
-            .then(res => res.json())
-            .then(data => {
-                setPosts(data)
-                console.log(data)
-            })
-            .catch(err => console.log(err))
-    }
-
-    useEffect(() => {
-        fetchPostsByUserId()
-    }, []);
 
 
         return(
@@ -45,7 +28,7 @@ function Post({postInfo }) {
                         <div className="more"><a href="url"><MoreVertIcon/></a></div>
                     </div>
                     <div className="post-img-cont">
-                        <img className="post-img" src="https://i.pinimg.com/564x/c1/5c/2b/c15c2b230e28d0bfae462cc738be7a83.jpg"/>
+                        <img className="post-img" src=""/>
                     </div>
 
                     {/*Post description section*/}
@@ -59,7 +42,7 @@ function Post({postInfo }) {
                         <div className="likes-amount">1324 likes</div>
                         <div className="desc-cont">
                             <p className="user-n"><a href="url">Username</a></p>
-                            <div className="desc-text">this is a description
+                            <div className="desc-text">this is a desc
                             </div>
                         </div>
                     </div>
