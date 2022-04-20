@@ -10,12 +10,13 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SideSuggestions from "./SideSuggestions";
 import {Component, useEffect, useState} from "react";
-import {deletePost, likePost} from "../../client";
+import {deletePost, getUserByUserId, likePost} from "../../client";
 import Comments from "../comments/Comments";
 
 function Post({postInfo}) {
 
     //const [post, setPost] = useState({postInfo})
+    const [user, setUser] = useState({})
 
 const fetchDeletePost =() =>{
        deletePost(postInfo.id)
@@ -27,6 +28,20 @@ const fetchLikePost =()=>{
            .catch(err => console.log(err))
 }
 
+const fetchUserByUserId = ()=>{
+    getUserByUserId(postInfo.userId)
+        .then(res => res.json())
+        .then(data => setUser(data))
+        .catch(err => console.log(err))
+
+}
+
+    useEffect(() => {
+        console.log(postInfo.userId)
+        fetchUserByUserId()
+    }, [postInfo]);
+
+
         return(
         <div className="feed">
 
@@ -35,8 +50,8 @@ const fetchLikePost =()=>{
                 <div className="post">
                     <div className="user-cont">
 
-                        <div className="profile-img-cont"><AccountCircleRoundedIcon sx={{ fontSize: 50 }}/> </div>
-                        <p className="user-n">{postInfo.username}</p>
+                        <div className="profile-img-cont"> <img className="user-prof-img" src={`${user.profilePicturePath}`}width="50" height="50"/> </div>
+                        <p className="user-n">{user.username}</p>
                         <div className="more"><button className="delete-post" onClick={fetchDeletePost}>Delete post</button></div>
                     </div>
                     <div className="post-img-cont">
@@ -53,8 +68,8 @@ const fetchLikePost =()=>{
                         </div>
                         <div className="likes-amount">123 likes</div>
                         <div className="desc-cont">
-                            <p className="user-n">{postInfo.username}</p>
-                            <div className="desc-text">{postInfo.description}description text here
+                            <p className="user-n">{user.username}</p>
+                            <div className="desc-text">{postInfo.description}
                             </div>
                         </div>
                         <Comments/>

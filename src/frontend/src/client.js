@@ -91,7 +91,7 @@ export const likePost = (postId) =>
     fetch(`/api/v1/post/like/${postId}`)
         .then(checkStatus)
 
-export const makeComment = (comment,timestamp) =>
+export const makeComment = (comment,timestamp,userId ) =>
     fetch("/api/v1/comment/submit-comment", {
         method: 'POST',
         headers: {
@@ -100,9 +100,12 @@ export const makeComment = (comment,timestamp) =>
         },
         body: JSON.stringify({
             comment: comment,
-            lieks: null,
-            postId: null,
             timestamp: timestamp,
+            userId: userId
 
         })
     }).then(checkStatus);
+
+export const getUserByUserId = (id) =>
+    fetch(`/api/v1/users/find-user-by/${id}`)
+        .then(checkStatus)

@@ -41,4 +41,7 @@ public class UserDAO {
         userRepository.save(user);
     }
 
+    public Optional<User> findUserById(Long id) {
+        return userRepository.findById(id);
+    }
 }
