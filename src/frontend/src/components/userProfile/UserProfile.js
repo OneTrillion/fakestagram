@@ -14,7 +14,7 @@ const [user, setUser] = useState({});
 const [posts, setPosts] = useState([{}])
 
 const fetchGetUserInfoByUsername = () =>{
-    getUserInfoByUsername("admin")
+    getUserInfoByUsername("LoveIsLife")
         .then(res => res.json())
         .then(data => setUser(data))
         .catch(err => console.log(err))
@@ -59,7 +59,7 @@ const fetchGetUserInfoByUsername = () =>{
 
                     <div className="status-cont">
                         <div className="post-count">{post.length} Posts</div>
-                        <div className="followers-count">{calcLength(user.followerIds)}followers</div>
+                        <div className="followers-count">{calcLength(user.followerIds)} followers</div>
                         <div className="following-count">{calcLength(user.followingIds)} following</div>
 
                     </div>

@@ -1,5 +1,6 @@
 .comments{
     display: block;
+    background-color: #ffffff;
 }
 
 .comment-cont{
@@ -7,11 +8,12 @@
     padding-left: 10px;
     padding-top:10px;
     margin-bottom: 10px;
-
+    background-color: #ffffff;
 }
 
 .smiley-icon{
     margin-right: 10px;
+    background-color: #ffffff;
 }
 
 .comment > input {
@@ -24,12 +26,14 @@
 
 .posted-comments-cont{
     display: flex;
+    background-color: #ffffff;
 }
 
 .comment-posted{
     font-size: 13px;
     margin-top:13px;
     margin-left: 10px;
+    background-color: #ffffff;
 }
 .post-comment{
     border: 1px solid #D8D8D8;
@@ -38,6 +42,7 @@
     padding: 5px;
     margin-left: 300px;
     background-color: #FAFAFA;
+    background-color: #ffffff;
 }
 
 .post-comment:hover{

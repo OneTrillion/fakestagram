@@ -5,7 +5,7 @@
     padding-top: 10px;
     padding-left:4px;
     padding-right:5px;
-    width: 650px;
+    width: 655px;
     margin-left: 300px;
     margin-top: 20px;
     border-radius: 3px;
@@ -14,15 +14,17 @@
 }
 
 .user-cont{
+    background-color: #ffffff;
     font-size: 12px;
     display: flex;
     border-bottom: 1px solid #D8D8D8;
-    width:645px;
+    width:640px;
     padding-left:7px;
 }
 
 
 p.user-n{
+    background-color: #ffffff;
     margin-left: 10px;
     margin-top: 13px;
     font-size: 13px;
@@ -30,6 +32,7 @@ p.user-n{
 }
 
 .more{
+    background-color: #ffffff;
     float: right;
     margin-left:490px;
     margin-top:8px;
@@ -37,9 +40,12 @@ p.user-n{
 
 
 .post-img-cont{
+    background-color: #ffffff;
+
     max-width: 650px;
 }
 img.post-img{
+    background-color: #ffffff;
     width: 645px;
     padding-left:2px;
     padding-right:5px;
@@ -49,30 +55,36 @@ img.post-img{
 .desc-cont{
     display:flex;
     border-bottom: 1px solid #D8D8D8;
+    background-color: #ffffff;
 }
 
 .icons-cont{
     display:flex;
+    background-color: #ffffff;
 }
 
 .like-icon{
     margin-right:10px;
     margin-left:10px;
     margin-top:5px;
+    background-color: #ffffff;
 }
 
 .like-icon:hover{
     opacity: 50%;
+    background-color: #ffffff;
 }
 .comment-icon{
     margin-right:10px;
     margin-top:5px;
+    background-color: #ffffff;
 }
 .comment-icon:hover{
     opacity: 50%;
 }
 .share-icon{
     margin-top:4px;
+    background-color: #ffffff;
 }
 
 .share-icon:hover{
@@ -81,6 +93,7 @@ img.post-img{
 
 .save-icon{
     margin-left:510px;
+    background-color: #ffffff;
     margin-top:5px;
 }
 
@@ -90,12 +103,14 @@ img.post-img{
 
 .post-description{
     display:block;
+    background-color: #ffffff;
 }
 
 .likes-amount{
     text-align: left;
     margin-left: 10px;
     margin-top: 5px;
+    background-color: #ffffff;
 }
 
 .desc-text{
@@ -103,11 +118,13 @@ img.post-img{
     text-align: left;
     margin-left: 5px;
     margin-top:13px;
+    background-color: #ffffff;
 
 }
 
 .feed{
     display: flex;
+
 }
 
 .delete-post{

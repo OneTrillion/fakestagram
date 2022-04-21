@@ -1,6 +1,9 @@
 
+* {
+}
 .homePage{
     display: flex;
+    background-color: #FAFAFA;
 
 }
 .side-cont{

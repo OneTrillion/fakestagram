@@ -1,9 +1,11 @@
 
 .nav{
     margin-right:310px;
+    background-color: #ffffff;
 }
 
 .dropdown-icons-cont{
+    background-color: #ffffff;
     display: flex;
 }
 
@@ -39,4 +41,5 @@ a{
 .btn:focus, .btn:active:focus, .btn.active:focus{
     outline:none;
     box-shadow:none;
+    background-color: #ffffff;
 }
