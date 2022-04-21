@@ -72,7 +72,7 @@ const calcLength = (obj) => {
 
                         <div className="profile-img-cont"><img className="user-prof-img" src={`${user.profilePicturePath}`}width="50" height="50"/> </div>
                         <p className="user-n">{user.username}</p>
-                        <div className="more"><button className="delete-post" onClick={likeToggle}>Delete post</button></div>
+                        <div className="more"><button className="delete-post" onClick={fetchDeletePost}>Delete post</button></div>
                     </div>
                     <div className="post-img-cont">
                         <img className="post-img" src={`${postInfo.img}`}/>
@@ -81,7 +81,7 @@ const calcLength = (obj) => {
                     {/*Post description section*/}
                     <div className="post-description">
                         <div className="icons-cont">
-                            <div className="like-icon"><FavoriteBorderIcon onClick={fetchLikePost}/></div>
+                            <div className="like-icon"><FavoriteBorderIcon onClick={likeToggle}/></div>
                             <div className="comment-icon"><a href=""><ChatBubbleOutlineIcon/></a></div>
                             <div className="share-icon"><a href=""><SendIcon/></a></div>
                             <div className="save-icon"><a href=""><BookmarkBorderIcon/></a></div>
