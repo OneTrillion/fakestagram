@@ -1,5 +1,6 @@
 package com.grupp3.fakestagram.api;
 
+import com.grupp3.fakestagram.model.BioUi;
 import com.grupp3.fakestagram.model.User;
 import com.grupp3.fakestagram.model.UserInfo;
 import com.grupp3.fakestagram.service.UserService;
@@ -54,8 +55,8 @@ public class UsersController {
     }
 
     @PutMapping("/change-bio")
-    public void changeBio(@RequestBody String newBio){
-        userService.changeBio(newBio);
+    public void changeBio(@RequestBody BioUi newBio){
+        userService.changeBio(newBio.getNewBio());
     }
 
     @GetMapping("/user-info/{username}")

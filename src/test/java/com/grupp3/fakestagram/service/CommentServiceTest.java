@@ -11,7 +11,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 
 @ExtendWith(MockitoExtension.class)
 class CommentServiceTest {
@@ -33,7 +36,8 @@ class CommentServiceTest {
         //when
         underTest.submitComment(comment);
         //then
-        Mockito.verify(commentDAO).submitComment(comment);
+        Mockito.verify(commentDAO, Mockito.times(1)).submitComment(comment);
+        //times
     }
 
     @Test
@@ -42,10 +46,12 @@ class CommentServiceTest {
         Comment comment = new Comment("test", 5L, "January");
         comment.setId(5L);
         Long commentId = comment.getId();
+
+        Mockito.when(commentDAO.findCommentById(any())).thenReturn(Optional.of(comment));
         //when
-        underTest.findCommentById(commentId);
+        Comment commentById = underTest.findCommentById(commentId);
         //then
-        Mockito.verify(commentDAO).findCommentById(commentId);
+        assertEquals(5L,commentById.getId());
     }
 
     @Test
